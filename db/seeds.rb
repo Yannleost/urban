@@ -11,5 +11,5 @@ p "the computer is seeding"
 10.times do
 Course.create!(
 title: Faker::Address.city)
-end@
+end
 p "Database seeded ! Well done"
