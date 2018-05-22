@@ -7,3 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+p "the computer is seeding"
+
+10.times do
+
+Course.create!(
+
+title: Faker::Address.city)
+
+end
+
+p "Database seeded ! Well done"
