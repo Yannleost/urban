@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_05_23_140914) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,6 +46,18 @@ ActiveRecord::Schema.define(version: 2018_05_23_140914) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "steps", force: :cascade do |t|
+    t.bigint "course_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.text "description"
+    t.string "title"
+    t.integer "step_num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_steps_on_course_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -65,4 +78,5 @@ ActiveRecord::Schema.define(version: 2018_05_23_140914) do
 
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "users"
+  add_foreign_key "steps", "courses"
 end
