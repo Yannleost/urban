@@ -18,5 +18,9 @@
 
 class Course < ApplicationRecord
 has_many :reviews
+has_many :steps
 enum difficulty: [:easy, :medium, :hard]
+
+
+
 end

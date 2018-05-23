@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div
+    id="map" style="width: 100%; height: 350px;"
+    data-markers="<%= @markers.to_json %>"
+    >
+  </div>
+</div>
+
+  <div class ="row">
+    <h2> Description du parcours </h2>
+    <div class="col-xs-6">
+      <%= @course.description =%>
+    </div>
+    <div class="col-xs-6">
+      <div class="image-descriptif">
+        <img src="http://www.clos-sainte-victoire.com/wp-content/uploads/2013/04/calanques-930x300.jpg">
+    </div>
+  </div>
+</div>
+
+  <div class="videos">
+    <div class="col-xs-6">
+      <iframe width="400" height="305"
+      src="https://www.youtube.com/embed/7nzWEqXO6rQ">
+    </iframe>
+  </div>
+  <div class="col-xs-6">
+    <iframe width="400" height="305"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+  </iframe>
+</div>
+</div>
+
+<div class="avis-du-coach">
+  <p> C </p>
+</div>
+
+</div>
+</div>
