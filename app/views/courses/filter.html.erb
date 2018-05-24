@@ -1,4 +1,10 @@
 <div class="container">
+  <%= simple_form_for(@course, url: searchcourse_path) do |f| %>
+    <%= f.input :difficulty %>
+    <%= f.input :category %>
+    <%= f.submit %>
+  <% end %>
+
   <h3>Répondez aux questions et nous vous proposerons un choix de destination</h2>
   <h5>Que voulez-vous découvrir ?</h3>
   <div class="row">
@@ -17,7 +23,7 @@
         <div class="card-category">Parcours</div>
           <div class="card-description">
             <h2>L'estaque</h2>
-            <p>Very cool city, the best</p>
+            <p>Endroit de charme</p>
           </div>
       </div>
   </div>
@@ -27,7 +33,7 @@
         <div class="card-category">Parcours</div>
           <div class="card-description">
             <h2>Le Vieux port</h2>
-            <p>Very cool city, the best</p>
+            <p>Le coeur de la ville</p>
           </div>
         </div>
       </div>
@@ -37,12 +43,12 @@
         <div class="card-category">Parcours</div>
           <div class="card-description">
             <h2>Centre ville</h2>
-            <p>Very cool city, the best!</p>
+            <p>Marseille ville du sud!</p>
           </div>
       </div>
   </div>
 </div>
-  <h5>Quel niveau de difficulté souhaitez vous pour la course?</h2>
+  <h3>Quel niveau de difficulté souhaitez vous pour la course?</h3>
   <div class="form-check">
     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
     <label class="form-check-label" for="defaultCheck1">
@@ -52,6 +58,7 @@
   <div class="form-check">
     <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
     <label class="form-check-label" for="defaultCheck2">
+      <
      Moyen
     </label>
   </div>
@@ -61,7 +68,7 @@
      Difficile
     </label>
   </div>
-  <h2>Combien de temps souhaitez vous courir? </h2>
+  <h3>Combien de temps souhaitez vous courir? </h3>
   <div class="form-check">
     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
     <label class="form-check-label" for="defaultCheck1">
