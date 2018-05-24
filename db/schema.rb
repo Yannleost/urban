@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_22_153530) do
+
+ActiveRecord::Schema.define(version: 2018_05_23_140914) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +32,15 @@ ActiveRecord::Schema.define(version: 2018_05_22_153530) do
     t.integer "distance"
   end
 
+  create_table "media", force: :cascade do |t|
+    t.integer "category_of_media"
+    t.string "url"
+    t.bigint "step_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["step_id"], name: "index_media_on_step_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "note"
     t.text "content"
@@ -45,6 +56,18 @@ ActiveRecord::Schema.define(version: 2018_05_22_153530) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "steps", force: :cascade do |t|
+    t.bigint "course_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.text "description"
+    t.string "title"
+    t.integer "step_num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_steps_on_course_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -58,10 +81,13 @@ ActiveRecord::Schema.define(version: 2018_05_22_153530) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pseudo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "media", "steps"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "users"
+  add_foreign_key "steps", "courses"
 end

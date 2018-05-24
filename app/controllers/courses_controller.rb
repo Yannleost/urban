@@ -5,7 +5,19 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @reviews = Review.all
+    @steps =  Step.all
+
+
+    @markers = @steps.map do |step|
+      {
+        lat: step.latitude,
+        lng: step.longitude#,
+      }
+
+    end
   end
+
 
 
   def filter
