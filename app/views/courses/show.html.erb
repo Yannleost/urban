@@ -7,6 +7,7 @@
   </div>
 </div>
 
+<div class="container"
   <div class ="row-1">
     <h2> Description du parcours </h2>
     <div class="description">
@@ -17,20 +18,50 @@
       <%= image_tag(@course.photo_url) %>
     </div>
   </div>
+</div>
+
+  <div class ="row-2">
+  <% @reviews.each do |review| %>
+  <ul>
+    <li> review.content </li>
+    <li> review.note </li>
+  </ul>
+  <%end%>
   </div>
 
+
+
+
+
+
 <% @steps.each do |step| %>
-<div>
-  <h2>step.step_num</h2>
-  <%= image_tag(step.medias.photo.first.url) %>
-</div>
+<div class="col-xs-12 col-sm-4">
+   <div class="card" >
+  <%=  step.step_num %>
+  </div>
+
+  </div>
 <% end %>
-  <div class="videos">
-    <div class="col-xs-6">  </div>
-  <div class="col-xs-6">
-    <iframe width="400" height="305"
-    src="https://www.youtube.com/embed/tgbNymZ7vqY">
-  </iframe>
+
+
+
+
+
+
+
+
+
+<div class="videos">
+    <div class="video">
+      <% step = @steps.find_by(step_num: 2)%>
+      <%= video_tag(step.medias.last.url) %>
+    </div>
+      <div class="video">
+      <% step = @steps.find_by("step_num = 3")%>
+      <%= video_tag(step.medias.last.url) %>
+    </div>
+
+  </div>
+
 </div>
-</div>
-</div>
+
