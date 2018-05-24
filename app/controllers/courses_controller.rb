@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    # @reviews = Review.all(@course)
+    @reviews = @course.reviews
     @steps =  @course.steps
     @markers = @steps.map do |step|
       {
