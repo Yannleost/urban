@@ -30,9 +30,8 @@ class CoursesController < ApplicationController
 
   def search_course
     time = params[:time]
-    diffulty = params[:difficulty]
+    difficulty = params[:difficulty]
     category = params[:category]
-    binding.pry
 
     #compliqué
   end
