@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'courses/filter',  to: 'courses#filter', as: :filter
   get 'courses/selection', to: 'courses#searchcourse', as: :searchcourse
   resources :courses , only: [:index, :show] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :destroy]
   end
 
 

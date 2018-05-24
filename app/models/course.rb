@@ -14,6 +14,7 @@
 #  tracking    :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  distance    :integer
 #
 
 class Course < ApplicationRecord
