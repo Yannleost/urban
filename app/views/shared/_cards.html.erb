@@ -1,15 +1,10 @@
 <% @courses.each do |course| %>
   <div class="col-xs-12 col-sm-4">
-          <%= link_to course_path(course.id) do %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-        <%= image_tag("urban")%>
-  </div>
+    <%= link_to course_path(course.id) do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(course.photo_url)%>)">
+    </div>
     <%end%>
-
-          <div class="modif-title-card" ><p> <i><%= course.title %></i></p></div>
-
-
+      <div class="modif-title-card" ><p> <i><%= course.title %></i></p></div>
   </div>
 <%end%>
 
-<!-- image-url("urban.jpg") -->
