@@ -10,7 +10,7 @@ p "deleting.."
 Media.destroy_all
 step = Step.all
 step.destroy_all
-
+Review.destroy_all
 course = Course.all
 course.destroy_all
 
