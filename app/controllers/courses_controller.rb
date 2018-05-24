@@ -22,10 +22,15 @@ class CoursesController < ApplicationController
     #la personne selectionne une category : on recupere la param_id de la category
     #dans la category on selectionne un parcours et on recupere lle param_id du parcours de cette category
     #
+    @course = Course.new
 
   end
 
-  def search_courses
+  def search_course
+    time = params[:time]
+    difficulty = params[:difficulty]
+    category = params[:category]
+
     #compliqué
   end
 

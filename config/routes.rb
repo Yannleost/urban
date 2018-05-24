@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'courses/filter',  to: 'courses#filter', as: :filter
-  get 'courses/selection', to: 'courses#searchcourse', as: :searchcourse
+  post 'courses/selection', to: 'courses#search_course', as: :searchcourse
   resources :courses , only: [:index, :show] do
     resources :reviews, only: [:new, :create, :destroy]
   end
