@@ -1,24 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-<h2>Ta review sur ton parcour</h2>
-<%= simple_form_for [@course, @review] do |f| %>
-
-  <div class="form-inputs">
-    <%= f.input :note %>
-    <%= f.input :content %>
-    <%= f.input :lost_calories %>
-    <%= f.input :felt_difficulties %>
-    <%= f.input :time_spent %>
-    <%= f.input :selfie %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "envoi ta review" %>
-  </div>
-  <% end %>
-
-
+      <h2>Ta review sur ton parcour</h2>
+      <%= simple_form_for [@course, @review] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :note %>
+        <%= f.input :content %>
+        <%= f.input :lost_calories %>
+        <%= f.input :felt_difficulties %>
+        <%= f.input :time_spent %>
+        <%= f.input :selfie %>
+        <%= f.submit "sauvegarde ta review" ,class: "btn btn-success"%>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+
+
