@@ -6,11 +6,145 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-Course.all.destroy_all
+p "deleting.."
+
+step = Step.all
+Media.destroy_all
+step.destroy_all
+course = Course.all
+course.destroy_all
+
+
+p "deleting ok."
+
 
 p "the computer is seeding"
-10.times do
-Course.create!(
-title: Faker::Address.city)
+p "start seeding the first Courses"
+
+course1 = Course.create!(
+title: Faker::Address.city,
+description: Faker::VForVendetta.speech,
+city: "Marseille",
+photo_url: "https://picsum.photos/200/300/?random",
+distance: Faker::Number.between(7, 22),
+category: "Calanques",
+)
+
+media = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
+media2 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=C7mXGMcpA0g")
+p "courses Ok"
+p "start seeding the steps..."
+
+steps_array = []
+[[53.45, 5.45],[53.45, 5.45],[53.45, 5.45],[53.45, 5.45]].each do |coord|
+  step = Step.create!(
+    course: course1,
+    latitude: coord[0],
+    longitude: coord[1]
+   )
+  step.medias << [media, media2]
 end
-p "Database seeded ! Well done"
+
+p "step 1 Ok"
+
+p "First courses seeded ! Let's start with the second one"
+
+p "-----------------------------------"
+
+p "start seeding the second Courses"
+
+course2 = Course.create!(
+title: Faker::Address.city,
+description: Faker::VForVendetta.speech,
+city: "Marseille",
+photo_url: "https://picsum.photos/200/300/?random",
+distance: Faker::Number.between(7, 22),
+category: "Centre-ville",
+)
+
+
+media3 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
+media4 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=C7mXGMcpA0g")
+p "courses Ok"
+p "start seeding the steps..."
+
+steps_array2 = []
+[[43.29204, 5.35896],[43.29343, 5.35943],[43.29611, 5.36993],[43.28557, 5.35112]].each do |coord|
+  step = Step.create!(
+    course: course2,
+    latitude: coord[0],
+    longitude: coord[1]
+   )
+  step.medias << [media3, media4]
+end
+
+p "step 2 Ok"
+p " -----------------------------------------"
+
+
+p "Second courses seeded ! Let's start with the third one"
+
+p "Start seeding the third Courses"
+
+course3 = Course.create!(
+title: Faker::Address.city,
+description: Faker::VForVendetta.speech,
+city: "Marseille",
+photo_url: "https://picsum.photos/200/300/?random",
+distance: Faker::Number.between(7, 22),
+category: "Estaque",
+)
+
+media5 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
+media6 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=C7mXGMcpA0g")
+p "courses Ok"
+p "start seeding the steps..."
+
+steps_array3 = []
+[[53.45, 5.45],[53.45, 5.45],[53.45, 5.45],[53.45, 5.45]].each do |coord|
+  step = Step.create!(
+    course: course3,
+    latitude: coord[0],
+    longitude: coord[1]
+   )
+  step.medias << [media5, media6]
+end
+
+p "step 3 Ok"
+
+p "Third courses seeded ! Let's start with the fourth and last one"
+
+p "-------------------------------------"
+
+p "start seeding the Last Courses"
+
+course4 = Course.create!(
+title: Faker::Address.city,
+description: Faker::VForVendetta.speech,
+city: "Marseille",
+photo_url: "https://picsum.photos/200/300/?random",
+distance: Faker::Number.between(7, 22),
+category: "Campagne",
+)
+
+media7 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
+media8 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=C7mXGMcpA0g")
+p "courses Ok"
+p "start seeding the steps..."
+
+steps_array4 = []
+[[53.45, 5.45],[53.45, 5.45],[53.45, 5.45],[53.45, 5.45]].each do |coord|
+  step = Step.create!(
+    course: course4,
+    latitude: coord[0],
+    longitude: coord[1]
+   )
+  step.medias << [media7, media8]
+end
+
+p "step 4 Ok"
+
+p "LAST courses seeded ! "
+p "your app is ready to use ! What an amazing seed mates."
+
+

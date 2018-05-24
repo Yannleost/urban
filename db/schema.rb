@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_093509) do
+ActiveRecord::Schema.define(version: 2018_05_23_144009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2018_05_23_093509) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "distance"
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.integer "category_of_media"
+    t.string "url"
+    t.bigint "step_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["step_id"], name: "index_media_on_step_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -74,6 +83,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_093509) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "media", "steps"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "users"
   add_foreign_key "steps", "courses"
