@@ -5,10 +5,8 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @reviews = Review.all
-    @steps =  Step.all
-
-
+    # @reviews = Review.all(@course)
+    @steps =  @course.steps
     @markers = @steps.map do |step|
       {
         lat: step.latitude,

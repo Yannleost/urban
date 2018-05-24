@@ -3,27 +3,30 @@
   <div class="row">
     <div
     id="map" style="width: 100%; height: 350px;"
-    data-markers="<%= @markers.to_json %>"
-    >
+    data-markers="<%= @markers.to_json %>">
   </div>
 </div>
 
-  <div class ="row">
+  <div class ="row-1">
     <h2> Description du parcours </h2>
-    <div class="col-xs-6">
+    <div class="description">
+    <div class="col-xs-9">
       <%= @course.description %>
     </div>
-    <div class="col-xs-6">
-    <%= image_tag(@course.photo_url) %>
+    <div class="col-xs-3">
+      <%= image_tag(@course.photo_url) %>
+    </div>
   </div>
-</div>
+  </div>
 
+<% @steps.each do |step| %>
+<div>
+  <h2>step.step_num</h2>
+  <%= image_tag(step.medias.photo.first.url) %>
+</div>
+<% end %>
   <div class="videos">
-    <div class="col-xs-6">
-      <iframe width="400" height="305"
-      src="https://www.youtube.com/embed/7nzWEqXO6rQ">
-    </iframe>
-  </div>
+    <div class="col-xs-6">  </div>
   <div class="col-xs-6">
     <iframe width="400" height="305"
     src="https://www.youtube.com/embed/tgbNymZ7vqY">
