@@ -18,11 +18,8 @@
 #
 
 class Course < ApplicationRecord
-has_many :reviews
-has_many :steps
-enum difficulty: [:easy, :medium, :hard]
-validates_inclusion_of :category, in: ["Calanques","Centre-ville","Estaque","Campagne"]
-
-
-
+  has_many :reviews
+  has_many :steps
+  enum difficulty: [:easy, :medium, :hard]
+  validates_inclusion_of :category, in: ["Calanques","Centre-ville","Estaque","Campagne"]
 end
