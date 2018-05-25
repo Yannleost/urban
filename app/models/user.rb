@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  pseudo                 :string
+#  profile_picture        :string
 #
 
 class User < ApplicationRecord
@@ -24,4 +25,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :reviews
+  mount_uploader :profile_picture, PhotoUploader
+
 end
