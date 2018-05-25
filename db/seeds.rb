@@ -27,7 +27,7 @@ description: Faker::VForVendetta.speech,
 city: "Marseille",
 photo_url: "https://picsum.photos/200/300/?random",
 distance: Faker::Number.between(3, 15),
-category: "Calanques",
+category: "Les Calanques",
 )
 
 p "courses Ok"
@@ -96,7 +96,7 @@ description: Faker::VForVendetta.speech,
 city: "Marseille",
 photo_url: "https://picsum.photos/200/300/?random",
 distance: Faker::Number.between(3, 15),
-category: "Calanques",
+category: "L'Estaque",
 )
 
 p "courses Ok"
@@ -130,7 +130,7 @@ description: Faker::VForVendetta.speech,
 city: "Marseille",
 photo_url: "https://picsum.photos/200/300/?random",
 distance: Faker::Number.between(3, 15),
-category: "Vieux port"
+category: "Le vieux port"
 )
 
 
