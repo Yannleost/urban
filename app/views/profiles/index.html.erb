@@ -1,0 +1,9 @@
+<h1> Profile </h1>
+
+voici tes reviews FDP
+<% @reviews.each do |review| %>
+  <ul>
+    <li> <%= review.content %></li>
+  </ul>
+<%end%>
+
