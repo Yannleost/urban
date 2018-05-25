@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+<%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
 
@@ -20,7 +20,7 @@
     <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLEAPI']}" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
 
@@ -28,4 +28,3 @@
 
   </body>
 </html>
-<head>
