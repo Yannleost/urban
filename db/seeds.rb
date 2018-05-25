@@ -26,7 +26,7 @@ title: Faker::Address.city,
 description: Faker::VForVendetta.speech,
 city: "Marseille",
 photo_url: "https://picsum.photos/200/300/?random",
-distance: Faker::Number.between(7, 22),
+distance: Faker::Number.between(3, 15),
 category: "Calanques",
 )
 
@@ -59,7 +59,7 @@ title: Faker::Address.city,
 description: Faker::VForVendetta.speech,
 city: "Marseille",
 photo_url: "https://picsum.photos/200/300/?random",
-distance: Faker::Number.between(7, 22),
+distance: Faker::Number.between(3, 15),
 category: "Centre-ville",
 )
 
@@ -95,12 +95,12 @@ title: Faker::Address.city,
 description: Faker::VForVendetta.speech,
 city: "Marseille",
 photo_url: "https://picsum.photos/200/300/?random",
-distance: Faker::Number.between(7, 22),
-category: "Estaque",
+distance: Faker::Number.between(3, 15),
+category: "Calanques",
 )
 
 p "courses Ok"
-p "start seeding the steps..."
+p "start sssssseeding the steps..."
 
 steps_array3 = []
 [[53.45, 5.45],[53.45, 5.45],[53.45, 5.45],[53.45, 5.45]].each_with_index do |coord, index|
@@ -129,8 +129,8 @@ title: Faker::Address.city,
 description: Faker::VForVendetta.speech,
 city: "Marseille",
 photo_url: "https://picsum.photos/200/300/?random",
-distance: Faker::Number.between(7, 22),
-category: "Campagne",
+distance: Faker::Number.between(3, 15),
+category: "Vieux port"
 )
 
 
