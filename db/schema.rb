@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_25_101120) do
+
+ActiveRecord::Schema.define(version: 2018_05_25_103647) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +21,6 @@ ActiveRecord::Schema.define(version: 2018_05_25_101120) do
     t.integer "difficulty", default: 0
     t.string "title"
     t.integer "time", default: 0
-    t.string "category"
     t.integer "calories", default: 0
     t.text "description"
     t.string "city"
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_05_25_101120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "distance"
+    t.integer "category"
   end
 
   create_table "media", force: :cascade do |t|

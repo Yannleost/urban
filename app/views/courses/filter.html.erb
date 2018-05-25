@@ -1,12 +1,7 @@
 <div class="container">
-  <%= simple_form_for(@course, url: searchcourse_path) do |f| %>
-    <%= f.input :difficulty %>
-    <%= f.input :category %>
-    <%= f.submit %>
-  <% end %>
 
-  <h3>Répondez aux questions et nous vous proposerons un choix de destination</h2>
-  <h5>Que voulez-vous découvrir ?</h3>
+  <h5>Répondez aux questions et nous vous proposerons un choix de destination</h5>
+  <h5>Que voulez-vous découvrir ?</h5>
   <div class="row">
     <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "calanques1.jpeg"%>');">
@@ -17,8 +12,7 @@
         </div>
       </div>
     </div>
-
-  <div class="col-xs-12 col-sm-3">
+    <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "estaqueok.jpeg"%>');">
         <div class="card-category">Parcours</div>
           <div class="card-description">
@@ -26,9 +20,9 @@
             <p>Endroit de charme</p>
           </div>
       </div>
-  </div>
-  <!-- eacht il y a des categories  on affiche une photo avec: un titre qui correspond -->
-  <div class="col-xs-12 col-sm-3">
+    </div>
+    <!-- eacht il y a des categories  on affiche une photo avec: un titre qui correspond -->
+    <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "vieuxportok.jpeg"%>');">
         <div class="card-category">Parcours</div>
           <div class="card-description">
@@ -37,8 +31,8 @@
           </div>
         </div>
       </div>
-<!-- <img src="calanques.jpeg"> -->
- <div class="col-xs-12 col-sm-3">
+    <!-- <img src="calanques.jpeg"> -->
+    <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "centrevillemars2.jpeg" %> ');">
         <div class="card-category">Parcours</div>
           <div class="card-description">
@@ -46,45 +40,17 @@
             <p>Marseille ville du sud!</p>
           </div>
       </div>
+    </div>
   </div>
+  <%= simple_form_for(@course, url: searchcourse_path) do |f| %>
+   <h5>Quel lieu préférez-vous?</h5>
+    <%= f.input :category, collection: Course.categories %>
+    <h5>Quel niveau de difficulté souhaitez vous pour la course?</h5>
+    <%= f.input :difficulty %>
+    <h5>Combien de temps souhaitez vous courir? </h5>
+    <%= f.input :time %>
+    <%= f.submit %>
+  <% end %>
 </div>
-  <h3>Quel niveau de difficulté souhaitez vous pour la course?</h3>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-      Facile
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-    <label class="form-check-label" for="defaultCheck2">
-     Moyen
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-    <label class="form-check-label" for="defaultCheck3">
-     Difficile
-    </label>
-  </div>
-  <h3>Combien de temps souhaitez vous courir? </h3>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-      Environ une demie-heure
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-    <label class="form-check-label" for="defaultCheck2">
-     Environ une heure
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-    <label class="form-check-label" for="defaultCheck3">
-     Environ une heure et demie
-    </label>
-  </div>
-</div>
+
 
