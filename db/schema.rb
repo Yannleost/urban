@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_144009) do
+
+ActiveRecord::Schema.define(version: 2018_05_25_103647) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +21,6 @@ ActiveRecord::Schema.define(version: 2018_05_23_144009) do
     t.integer "difficulty", default: 0
     t.string "title"
     t.integer "time", default: 0
-    t.string "category"
     t.integer "calories", default: 0
     t.text "description"
     t.string "city"
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_144009) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "distance"
+    t.integer "category"
   end
 
   create_table "media", force: :cascade do |t|
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_144009) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pseudo"
+    t.string "profile_picture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
