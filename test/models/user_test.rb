@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  pseudo                 :string
+#  profile_picture        :string
 #
 
 require 'test_helper'
