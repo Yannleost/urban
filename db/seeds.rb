@@ -42,7 +42,7 @@ steps_array = []
     longitude: coord[1],
    )
   media = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
-  media2 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=C7mXGMcpA0g")
+  media2 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/C7mXGMcpA0g")
   step.medias << [media, media2]
 end
 
@@ -78,7 +78,7 @@ steps_array2 = []
     longitude: coord[1]
    )
   media3 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
-media4 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=C7mXGMcpA0g")
+media4 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/C7mXGMcpA0g")
   step.medias << [media3, media4]
 end
 
@@ -111,7 +111,7 @@ steps_array3 = []
     longitude: coord[1]
    )
   media5 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
-media6 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=C7mXGMcpA0g")
+media6 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/C7mXGMcpA0g")
 
   step.medias << [media5, media6]
 end
@@ -146,7 +146,7 @@ steps_array4 = []
     longitude: coord[1]
    )
   media7 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
-media8 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=C7mXGMcpA0g")
+media8 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/UHltRjNXIzk")
   step.medias << [media7, media8]
 end
 

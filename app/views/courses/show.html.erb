@@ -20,9 +20,9 @@
   </div>
 </div>
 
-  <div class ="row">
+<div class ="row">
   <div class="col-xs-6">
-    <h5> Voilà ce qu'on en pensé nos runners : </h5>
+    <h5> Voilà ce qu'ils en ont pensé nos runners : </h5>
   <% @reviews.each do |review| %>
   <ul>
     <li><%=  review.content  %></li>
@@ -44,25 +44,28 @@
 </div>
 
 <div class="row">
-<% @steps.each do |step| %>
-<div class="col-xs-12 col-sm-3">
-  <div class="card" style="background-image: url('<%= step.medias.first.url %>');">
-  <p> photo step <%=  step.step_num %> </p>
-  </div>
-
-  </div>
-<% end %>
-
+  <% @steps.each do |step| %>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card" style="background-image: url('<%= step.medias.first.url %>');">
+      <p> photo step <%=  step.step_num %> </p>
+      </div>
+      <div class="card">
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe
+            width="245"
+            height="175"
+            class="embed-responsive-item"
+            src="<%= step.medias.video.first.url %>"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-<div class="row">
-<% @steps.each do |step| %>
-<div class="col-xs-12 col-sm-3">
-  <div class="card">
-  <p><%=  step.medias.last.url %> </p>
-  </div>
 
-  </div>
-<% end %>
 
-</div>
-</div>
+
+
