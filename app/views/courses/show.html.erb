@@ -20,48 +20,49 @@
   </div>
 </div>
 
-  <div class ="row-2">
+  <div class ="row">
+  <div class="col-xs-6">
+    <h5> Voilà ce qu'on en pensé nos runners : </h5>
   <% @reviews.each do |review| %>
   <ul>
-    <li> review.content </li>
-    <li> review.note </li>
+    <li><%=  review.content  %></li>
+   <p><%=  review.note  %>/10 - <%= review.user.email%></p>
   </ul>
   <%end%>
+  <%= link_to "Note ton parcours", new_course_review_path(@course) %>
+  <%= link_to "Voir tous les parcours", new_course_review_path(@course) %>
   </div>
+  <div class="col-xs-6">
+    <h5> Descriptifs de la courses : </h5>
+    <ul>
+    <li>Difficulté : <%= @course.difficulty %> </li>
+    <li>Catégorie : <%= @course.category %> </li>
+    <li>Distance : <%= @course.distance %></li>
+    <li>Calorie : <%= @course.calories %></li>
+    </ul>
+  </div>
+</div>
 
-
-
-
-
-
+<div class="row">
 <% @steps.each do |step| %>
-<div class="col-xs-12 col-sm-4">
-   <div class="card" >
-  <%=  step.step_num %>
+<div class="col-xs-12 col-sm-3">
+  <div class="card" style="background-image: url('<%= step.medias.first.url %>');">
+  <p> photo step <%=  step.step_num %> </p>
   </div>
 
   </div>
 <% end %>
 
-
-
-
-
-
-
-
-
-<div class="videos">
-    <div class="video">
-      <% step = @steps.find_by(step_num: 2)%>
-      <%= video_tag(step.medias.last.url) %>
-    </div>
-      <div class="video">
-      <% step = @steps.find_by("step_num = 3")%>
-      <%= video_tag(step.medias.last.url) %>
-    </div>
-
+</div>
+<div class="row">
+<% @steps.each do |step| %>
+<div class="col-xs-12 col-sm-3">
+  <div class="card">
+  <p><%=  step.medias.last.url %> </p>
   </div>
 
-</div>
+  </div>
+<% end %>
 
+</div>
+</div>
