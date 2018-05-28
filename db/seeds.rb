@@ -163,11 +163,11 @@ category: "Les Calanques",
 p "courses Ok"
 p "start seeding the steps..."
 
-steps_array = []
+steps_array5 = []
 [[53.45, 5.45],[53.45, 5.45],[53.45, 5.45],[53.45, 5.45]].each_with_index do |coord, index|
   step = Step.create!(
     step_num: index + 1,
-    course: course1,
+    course: course5,
     latitude: coord[0],
     longitude: coord[1],
    )
@@ -198,12 +198,12 @@ category: "Centre-ville",
 p "courses Ok"
 p "start seeding the steps..."
 
-steps_array2 = []
+steps_array6 = []
 [[43.29204, 5.35896],[43.29343, 5.35943],[43.29611, 5.36993],[43.28557, 5.35112]].each_with_index do |coord, index|
   step = Step.create!(
 
   step_num: index + 1,
-    course: course2,
+    course: course6,
     latitude: coord[0],
     longitude: coord[1]
    )
@@ -232,11 +232,11 @@ category: "L'Estaque",
 p "courses Ok"
 p "start sssssseeding the steps..."
 
-steps_array3 = []
+steps_array7 = []
 [[53.45, 5.45],[53.45, 5.45],[53.45, 5.45],[53.45, 5.45]].each_with_index do |coord, index|
   step = Step.create!(
    step_num: index + 1,
-    course: course3,
+    course: course7,
     latitude: coord[0],
     longitude: coord[1]
    )
@@ -254,7 +254,7 @@ p "-------------------------------------"
 
 p "start seeding the Last Courses"
 
-course9 = Course.create!(
+course8 = Course.create!(
 title: Faker::Address.city,
 description: Faker::VForVendetta.speech,
 city: "Marseille",
@@ -267,11 +267,11 @@ category: "Le vieux port"
 p "courses Ok"
 p "start seeding the steps..."
 
-steps_array4 = []
+steps_array8 = []
 [[53.45, 5.45],[53.45, 5.45],[53.45, 5.45],[53.45, 5.45]].each_with_index do |coord, index|
   step = Step.create!(
     step_num: index + 1,
-    course: course4,
+    course: course8,
     latitude: coord[0],
     longitude: coord[1]
    )
@@ -280,7 +280,7 @@ steps_array4 = []
   step.medias << [media20, media21]
 end
 
-course8 = Course.create!(
+course9 = Course.create!(
 title: Faker::Address.city,
 description: Faker::VForVendetta.speech,
 city: "Marseille",
@@ -292,11 +292,11 @@ category: "Les Calanques",
 p "courses Ok"
 p "start seeding the steps..."
 
-steps_array = []
+steps_array9 = []
 [[53.45, 5.45],[53.45, 5.45],[53.45, 5.45],[53.45, 5.45]].each_with_index do |coord, index|
   step = Step.create!(
     step_num: index + 1,
-    course: course1,
+    course: course9,
     latitude: coord[0],
     longitude: coord[1],
    )
