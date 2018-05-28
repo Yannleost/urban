@@ -42,13 +42,13 @@
       </div>
     </div>
   </div>
-  <%= simple_form_for(@course, url: searchcourse_path) do |f| %>
+  <%= simple_form_for(@course, url: searchcourse_path, method: :get) do |f| %>
    <h5>Quel lieu préférez-vous?</h5>
-    <%= f.input :category, collection: Course.categories %>
+    <%= f.input :category, collection: Course.categories, require: true %>
     <h5>Quel niveau de difficulté souhaitez vous pour la course?</h5>
-    <%= f.input :difficulty %>
+    <%= f.input :difficulty, collection: Course.difficulties, require: true%>
     <h5>Combien de temps souhaitez vous courir? </h5>
-    <%= f.input :time %>
+    <%= f.input :time, collection: Course.times, require: true %>
     <%= f.submit %>
   <% end %>
 </div>
