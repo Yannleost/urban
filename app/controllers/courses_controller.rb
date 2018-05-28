@@ -12,11 +12,19 @@ class CoursesController < ApplicationController
     @markers = @steps.map do |step|
       {
         lat: step.latitude,
-        lng: step.longitude#,
-      }
+        lng: step.longitude,
+        infoWindow: {
+          content: render_to_string(partial: "/steps/map_box", locals: { step: step })
+        }
 
+      }
+    end
+
+    @path = @steps.map do |step|
+      [step.latitude, step.longitude]
     end
   end
+
 
 
 
