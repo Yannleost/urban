@@ -22,7 +22,7 @@
 
 <div class ="row">
   <div class="col-xs-6">
-    <h5> Voilà ce qu'ils en ont pensé nos runners : </h5>
+    <h5> Voilà ce qu'en ont pensés nos runners : </h5>
   <% @reviews.each do |review| %>
   <ul>
     <li><%=  review.content  %></li>
@@ -41,6 +41,17 @@
     <li>Calorie : <%= @course.calories %></li>
     </ul>
   </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12">
+    <h6> La moyenne de nos usagés pour ce parcours : </h6>
+    <ul>
+      <li>Note moyenne selon nos utilisateurs : <%= @average_notes %></li>
+      <li>Difficultés ressentie par nos usagés : <%= @average_difficulties %></li>
+      <li>temps moyen mis par nos sportifs : <%= @average_times %></li>
+    </ul>
+  </div>
+
 </div>
 
 <div class="row">

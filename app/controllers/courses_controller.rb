@@ -8,6 +8,14 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @reviews = @course.reviews
+    all_notes = @reviews.pluck(:note)
+    @average_notes = all_notes.sum.fdiv all_notes.count
+    all_difficulties = @reviews.pluck(:felt_difficulties)
+    @average_difficulties = all_difficulties.sum / all_difficulties.count
+    all_times = @reviews.pluck(:time_spent)
+    @average_times = all_times.sum / all_times.count
+
+
     @steps =  @course.steps
     @markers = @steps.map do |step|
       {
