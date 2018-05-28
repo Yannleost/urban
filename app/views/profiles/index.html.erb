@@ -12,7 +12,7 @@ voici tes reviews FDP
   <div class= "row">
 
     <h1> Profile </h1>
-      <div>
+      <div class="picture">
       <% if @current_user.profile_picture.present? %>
         <%= image_tag(@current_user.profile_picture.identifier) %>
       <% else %>
