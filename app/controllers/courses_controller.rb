@@ -8,15 +8,40 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @reviews = @course.reviews
+    all_notes = @reviews.pluck(:note)
+    @average_notes = all_notes.sum.fdiv all_notes.count
+    all_difficulties = @reviews.pluck(:felt_difficulties)
+    if all_difficulties.count != 0
+    @average_difficulties = all_difficulties.sum / all_difficulties.count
+    else
+      p "no reviews yet"
+    end
+
+    all_times = @reviews.pluck(:time_spent)
+    if all_times.count != 0
+    @average_times = all_times.sum / all_times.count
+    else
+      p "no reviews yet"
+    end
+
+
     @steps =  @course.steps
     @markers = @steps.map do |step|
       {
         lat: step.latitude,
-        lng: step.longitude#,
-      }
+        lng: step.longitude,
+        infoWindow: {
+          content: render_to_string(partial: "/steps/map_box", locals: { step: step })
+        }
 
+      }
+    end
+
+    @path = @steps.map do |step|
+      [step.latitude, step.longitude]
     end
   end
+
 
 
 
