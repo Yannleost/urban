@@ -21,19 +21,18 @@ class CoursesController < ApplicationController
 
 
   def filter
-    #la personne selectionne une category : on recupere la param_id de la category
-    #dans la category on selectionne un parcours et on recupere lle param_id du parcours de cette category
-    #
-    @course = Course.new
-
+    @courses = Course.all
   end
 
   def search_course
+    time = params[:category]
+    time = params[:difficulty]
     time = params[:time]
-    difficulty = params[:difficulty]
-    category = params[:category]
+    # @courses = Course.all
 
-    #compliqué
+    # @courses = @courses.where(category: params[:category])
+    # @courses = @courses.where(difficulty: params[:difficulty])
+    # @courses = @courses.where(time: params[:time])
   end
 
 

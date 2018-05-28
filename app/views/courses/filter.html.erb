@@ -42,7 +42,7 @@
       </div>
     </div>
   </div>
-  <%= simple_form_for(@course, url: searchcourse_path) do |f| %>
+  <%= simple_form_for(@courses, url: searchcourse_path) do |f| %>
    <h5>Quel lieu préférez-vous?</h5>
     <%= f.input :category, collection: Course.categories %>
     <h5>Quel niveau de difficulté souhaitez vous pour la course?</h5>
