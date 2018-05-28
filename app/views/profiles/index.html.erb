@@ -7,3 +7,24 @@ voici tes reviews FDP
   </ul>
 <%end%>
 
+
+<div class= "container">
+  <div class= "row">
+
+    <h1> Profile </h1>
+      <div>
+      <% if @current_user.profile_picture.present? %>
+        <%= image_tag(@current_user.profile_picture.identifier) %>
+      <% else %>
+        <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198" class="avatar dropdown-toggle">
+        <%end%>
+        </div>
+      <div>
+        <% @reviews.each do |review| %>
+          <ul>
+            <li> <%= review.content %></li>
+          </ul>
+      <%end%>
+      </div>
+  </div>
+</div>

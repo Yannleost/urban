@@ -21,20 +21,30 @@ class CoursesController < ApplicationController
 
 
   def filter
-    #la personne selectionne une category : on recupere la param_id de la category
-    #dans la category on selectionne un parcours et on recupere lle param_id du parcours de cette category
-    #
     @course = Course.new
-
   end
 
   def search_course
-    time = params[:time]
-    difficulty = params[:difficulty]
-    category = params[:category]
+    @courses = Course.all
+    @courses = @courses.where(category: params[:course][:category])
+    @courses = @courses.where(difficulty: params[:course][:difficulty])
+    @courses = @courses.where(time: params[:course][:time])
 
-    #compliqué
-  end
+
+    if @courses.count > 1
+      @course = @courses.sample
+    else
+      @course = @courses.first
+    end
+    # category = params[:category]
+    # difficulty = params[:difficulty]
+    # time = params[:time]
+    redirect_to course_path(@course)
+    # @courses = Course.all
+end
+    #
+    #
+    #
 
 
 end
