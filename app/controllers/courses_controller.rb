@@ -11,9 +11,18 @@ class CoursesController < ApplicationController
     all_notes = @reviews.pluck(:note)
     @average_notes = all_notes.sum.fdiv all_notes.count
     all_difficulties = @reviews.pluck(:felt_difficulties)
+    if all_difficulties.count != 0
     @average_difficulties = all_difficulties.sum / all_difficulties.count
+    else
+      p "no reviews yet"
+    end
+
     all_times = @reviews.pluck(:time_spent)
+    if all_times.count != 0
     @average_times = all_times.sum / all_times.count
+    else
+      p "no reviews yet"
+    end
 
 
     @steps =  @course.steps
