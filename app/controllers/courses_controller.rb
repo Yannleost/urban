@@ -21,19 +21,30 @@ class CoursesController < ApplicationController
 
 
   def filter
-    @courses = Course.all
+    @course = Course.new
   end
 
   def search_course
-    time = params[:category]
-    time = params[:difficulty]
-    time = params[:time]
-    # @courses = Course.all
+    @courses = Course.all
+   raise
+    @courses = @courses.where(category: params[:category])
+    @courses = @courses.where(difficulty: params[:difficulty])
+    @courses = @courses.where(time: params[:time])
 
-    # @courses = @courses.where(category: params[:category])
-    # @courses = @courses.where(difficulty: params[:difficulty])
-    # @courses = @courses.where(time: params[:time])
-  end
+    if @courses.count > 1
+      @course = @courses.sample
+    else
+      @courses = @course
+    end
+    # category = params[:category]
+    # difficulty = params[:difficulty]
+    # time = params[:time]
+    redirect_to course_path(@course_id)
+    # @courses = Course.all
+end
+    #
+    #
+    #
 
 
 end
