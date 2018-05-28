@@ -23,6 +23,7 @@ class ReviewsController < ApplicationController
     redirect_to course_reviews_path
   end
 
+
   private
 
   def review_params
