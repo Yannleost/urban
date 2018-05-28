@@ -1,12 +1,52 @@
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.js-scrollTo').on('click', function() { // Au clic sur un élément
+      var page = $(this).attr('href'); // Page cible
+      var speed = 750; // Durée de l'animation (en ms)
+      $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+      return false;
+    });
+  });
+</script>
+
+
+
 <div class="banner banner-image fullscreen">
-  <h1>DECOUVREZ LA VILLE AUTREMENT</h1>
+  <h1>DECOUVREZ MARSEILLE AUTREMENT</h1>
 
-  <%= link_to "Vivez l'expérience", filter_path, class: "btn btn-lg btn-success" %>
+  <div class="btn-group-vertical">
+    <%= link_to "Vivez l'expérience", filter_path, class: "btn btn-lg btn-success" %>
+    
 
-  <p>ou choisissez nos parcours ci-dessous:</p>
+
+<br>
+<br>
+
+
+    <button type="button" class="btn btn-lg btn-success">
+    <a class="js-scrollTo"  href="#page-1">Tous nos parcours</a>
+  </button>
+
 </div>
 
-<div class="row">
-  <%= render 'shared/cards' %>
+
 </div>
+
+<div id="page-1">
+  <div class="contentWrapper">
+    <div class="container">
+      <div class="row">
+      <%= render 'shared/cards' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="scroll-to-top" class="scroll-to" href="#"><i class="fa fa-chevron-up"></i></a>
+
+
+
 
