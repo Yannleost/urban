@@ -13,11 +13,17 @@
       <div>
         <% @reviews.each do |review| %>
           <ul>
-            <li> <%= review.course.title %></li>
-            > <%= review.content %> <br />
-            > <%= review.selfie %>
+            <li> Ta course : <%= review.course.title %></li>
+              > Ton com's <%= review.content %> <br />
+              > Ton selfie  <img src="<%= review.selfie %>" style= img( width: 10px, height: auto )">
           </ul>
       <%end%>
       </div>
   </div>
 </div>
+
+
+img {
+    width: 100%;
+    height: auto;
+}
