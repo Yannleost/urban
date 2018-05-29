@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:profile_picture])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:pseudo, :profile_picture, :profile_picture_cache])
   end
+
+  def show
+    render params[:page]
+  end
 end
