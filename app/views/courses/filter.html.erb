@@ -1,5 +1,6 @@
 <div class="container">
 
+
   <h5>Répondez aux questions et nous vous proposerons un choix de destination</h5>
   <h5>Que voulez-vous découvrir ?</h5>
   <div class="row">
@@ -41,6 +42,8 @@
           </div>
       </div>
     </div>
+
+
   </div>
   <%= simple_form_for(@course, url: searchcourse_path, method: :get) do |f| %>
 
@@ -51,10 +54,13 @@
     <h5>Quel niveau de difficulté souhaitez vous pour la course?</h5>
     <%= f.input :difficulty, collection: Course.difficulties, required: true  %>
     <h5>Combien de temps souhaitez vous courir? </h5>
-    <%= f.input :time, collection: Course.times, required: true %>
-    <%= f.submit %>
+
+    <%= f.input :time, collection: Course.times, require: true %>
+    <%= f.button :button, data: { disable_with: "<i class='fas fa-spinner fa-spin'></i> Envoi...".html_safe }, class: "btn btn-primary" %>
+
   <% end %>
 </div>
+
 
 
 
@@ -81,4 +87,5 @@
   });
 
 </script>
+
 

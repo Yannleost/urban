@@ -50,6 +50,7 @@ class CoursesController < ApplicationController
   end
 
   def search_course
+    sleep(3)
     @courses = Course.all
     @courses = @courses.where(category: params[:course][:category])
     @courses = @courses.where(difficulty: params[:course][:difficulty])
