@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'courses#index'
   get 'courses/filter',  to: 'courses#filter', as: :filter
   get 'courses/selection', to: 'courses#search_course', as: :searchcourse
+  get 'about', to: 'pages#about'
   resources :profiles , only: [:index]
   resources :courses , only: [:index, :show] do
   resources :reviews, only: [:new, :create, :destroy]

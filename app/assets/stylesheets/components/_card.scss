@@ -11,20 +11,15 @@
 }
 
 .zoom:hover {
-  box-shadow: 0px 0px 50px #000000;
+  box-shadow: 0px 0px 25px $dark-gray;
   background:white;
   z-index: 2;
-  -webkit-transition: all 200ms ease-in;
-  -webkit-transform: scale(1.2);
-  -ms-transition: all 200ms ease-in;
-  -ms-transform: scale(1.2);
-  -moz-transition: all 200ms ease-in;
-  -moz-transform: scale(1.2);
   transition: all 200ms ease-in;
   transform: scale(1.2);
+  border-radius: 2px;
 }
 
-  .card_index {
+.card_index {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
