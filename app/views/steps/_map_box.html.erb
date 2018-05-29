@@ -1,9 +1,9 @@
-<p><b> Numero du Step : <%= step.step_num %> </b> </p>
+<p ><b> Numero du Step : <%= step.step_num %> </b> </p>
 <p> Medias associé(s) </p>
-<p> video:</p>
+<br>
   <iframe
-            width="245"
-            height="175"
+            width="200"
+            height="100"
             class="embed-responsive-item"
             src="<%= step.medias.video.first.url %>"
             frameborder="0"
@@ -12,3 +12,4 @@
 
   </iframe>
 
+<img src="<%= step.medias.photo.last.url%>" width="200", height="100">
