@@ -56,8 +56,10 @@ p "-----------------------------------"
 p "start seeding the second Courses"
 
 course2 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "Centre-ville n°1" ,
+description: "Inauguré en 2013 à l’occasion de l’événement Marseille Capitale
+ européenne de la culture 2013, ce musée imaginé par Rudy Ricciotti est la nouvelle attraction culturelle incontournable de la ville. Et pour cause, il offre une vue exceptionnelle sur Marseille et les îles du Frioul et
+ des expositions très intéressantes sur l’histoire de toutes les rives de la Méditerranée.",
 city: "Marseille",
 photo_url: "centre1",
 distance: Faker::Number.between(3, 15),
