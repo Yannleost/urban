@@ -1,23 +1,29 @@
 
 <div class= "container">
   <div class= "row">
-    <h1> Ton profil </h1>
+    <h2> Ton profil </h2>
       <div class="picture">
       <% if @current_user.profile_picture.present? %>
         <img src="<%= cl_image_path current_user.profile_picture, height: 200, width: 300, crop: :fill %>"
       <% else %>
-        <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198" class="avatar dropdown-toggle">
+        <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198" class="avatar dropdown-toggle", style="width:300; height:">
         <%end%>
         </div>
         <h5> Voici toutes tes reviews : </h5>
       <div>
         <% @reviews.each do |review| %>
           <ul>
-            <li> <%= review.course.title %></li>
-            > <%= review.content %> <br />
-            > <%= review.selfie %>
+            <li> Ta course : <%= review.course.title %></li>
+              > Ton com's <%= review.content %> <br />
+              > Ton selfie  <img src="<%= review.selfie %>" style= img( width: 10px, height: auto )">
           </ul>
       <%end%>
       </div>
   </div>
 </div>
+
+
+<!-- img {
+    width: 100%;
+    height: auto;
+} -->

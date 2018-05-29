@@ -5,7 +5,7 @@
   <h5>Que voulez-vous découvrir ?</h5>
   <div class="row">
     <div class="col-xs-12 col-sm-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "calanques1.jpeg"%>');">
+      <div class="card" id="0" style="background-image: url('<%= image_path "calanques1.jpeg"%>');">
       <div class="card-category">Parcours</div>
         <div class="card-description">
           <h2> Les calanques</h2>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "estaqueok.jpeg"%>');">
+      <div class="card" id="1" style="background-image: url('<%= image_path "estaqueok.jpeg"%>');">
         <div class="card-category">Parcours</div>
           <div class="card-description">
             <h2>L'estaque</h2>
@@ -24,7 +24,7 @@
     </div>
     <!-- eacht il y a des categories  on affiche une photo avec: un titre qui correspond -->
     <div class="col-xs-12 col-sm-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "vieuxportok.jpeg"%>');">
+      <div class="card" id="2" style="background-image: url('<%= image_path "vieuxportok.jpeg"%>');">
         <div class="card-category">Parcours</div>
           <div class="card-description">
             <h2>Le Vieux port</h2>
@@ -34,7 +34,7 @@
       </div>
     <!-- <img src="calanques.jpeg"> -->
     <div class="col-xs-12 col-sm-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "centrevillemars2.jpeg" %> ');">
+      <div class="card" id="3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "centrevillemars2.jpeg" %> ');">
         <div class="card-category">Parcours</div>
           <div class="card-description">
             <h2>Centre ville</h2>
@@ -46,16 +46,46 @@
 
   </div>
   <%= simple_form_for(@course, url: searchcourse_path, method: :get) do |f| %>
-   <h5>Quel lieu préférez-vous?</h5>
-    <%= f.input :category, collection: Course.categories, require: true %>
+
+   <div class="hidden">
+    <%= f.input :category, as: :radio_buttons,
+          collection: Course.categories %>
+   </div>
     <h5>Quel niveau de difficulté souhaitez vous pour la course?</h5>
-    <%= f.input :difficulty, collection: Course.difficulties, require: true%>
+    <%= f.input :difficulty, collection: Course.difficulties, required: true  %>
     <h5>Combien de temps souhaitez vous courir? </h5>
+
     <%= f.input :time, collection: Course.times, require: true %>
     <%= f.button :button, data: { disable_with: "<i class='fas fa-spinner fa-spin'></i> Envoi...".html_safe }, class: "btn btn-primary" %>
+
   <% end %>
 </div>
 
 
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var cards = document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+      card.addEventListener("click", function() {
+        //recuperer l'id de la carte
+        var id = this.id;
+        //cocher le radio button qui a cette id
+        var radioId = `course_category_${id}`;
+        var radio = document.getElementById(radioId);
+        radio.checked = true;
+        cards.forEach(function(card) {
+          if (card.classList.contains("selected")) {
+            card.classList.remove("selected");
+          }
+        });
+        this.classList.add("selected");
+      });
+    });
+  });
+
+</script>
 
 

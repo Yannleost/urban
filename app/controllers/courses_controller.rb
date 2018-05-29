@@ -65,7 +65,11 @@ class CoursesController < ApplicationController
     # category = params[:category]
     # difficulty = params[:difficulty]
     # time = params[:time]
-    redirect_to course_path(@course)
+    if @course.present?
+      redirect_to course_path(@course)
+    else
+      redirect_to filter_path
+    end
     # @courses = Course.all
 end
     #

@@ -3,6 +3,7 @@
   padding-top: 20px;
   text-align: center;
   background-size: cover;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -18,12 +19,17 @@
   font-size: 25px;
 }
 
+.banner-inner {
+  margin-top: -50px;
+}
+
 .btn-success {
   margin-top: 130px;
 }
 
 .banner h1 {
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .banner a{
