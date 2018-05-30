@@ -20,7 +20,7 @@
 class Course < ApplicationRecord
   has_many :reviews
   has_many :steps
-  enum difficulty: [:easy, :medium, :hard]
+  enum difficulty: [:facile, :moyen, :difficile]
   enum category: ["Les Calanques","L'Estaque","Le vieux port","Centre-ville"]
-  enum time: ["Moins de 30 minutes", "Entre 30min et 1heure", "Plus d'une Heure"]
+  enum time: ["Moins de 30 min", "Entre 30 min et 1 h", "Plus d'une heure"]
 end
