@@ -10,8 +10,8 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const path = JSON.parse(mapElement.dataset.path);
   console.log(markers)
   map.addMarkers(markers);
-  map.addMarker(start);
-  map.addMarker(end);
+  // map.addMarker(start);
+  // map.addMarker(end);
 
   map.drawPolyline({
     path: [

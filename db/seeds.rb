@@ -72,7 +72,7 @@ p "courses Ok"
 p "start seeding the steps..."
 
 steps_array2 = []
-[[43.29204, 5.35896],[43.29343, 5.35943],[43.29611, 5.36993],[43.28557, 5.35112]].each_with_index do |coord, index|
+[[43.29611, 5.36993],[43.268957, 5.368208],[43.285820, 5.350885],[43.292066, 5.358998]].each_with_index do |coord, index|
   step = Step.create!(
 
   step_num: index + 1,
