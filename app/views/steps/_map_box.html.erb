@@ -1,14 +1,24 @@
-<p ><b> Numero du Step : <%= step.step_num %> </b> </p>
-<p> Medias associé(s) </p>
-<br>
-<%@steps.each do |step| %>
 
-<% if step.step_num == 1 || step.step_num == 4 %>
-  <img src="<%= step.medias.photo.last.url%>" width="200", height="100">
-<else>
+
+
+
+
+
+
+<p ><b> Numero du Step : <%= step.step_num %> </b> </p>
+
+
+<% if step.step_num == 1 %>
+  <p> Une photo du lieu de votre départ... <p>
+  <img src="<%= step.medias.photo.last.url%>" width="375 ", height="150">
+<%elsif step.step_num == 4 %>
+<p> Une photo du lieu de votre arrivée... <p>
+  <img src="<%= step.medias.photo.last.url%>" width="375", height="150">
+<%elsif step.step_num == 2 %>
+<p> Voici l'exercice à faire à ce point ! </p>
   <iframe
-            width="200"
-            height="100"
+            width="375"
+            height="150"
             class="embed-responsive-item"
             src="<%= step.medias.video.first.url %>"
             frameborder="0"
@@ -16,6 +26,17 @@
             allowfullscreen>
 
   </iframe>
+  <% else step.step_num == 3 %>
+  <p> Voici l'exercice à faire à ce point ! </p>
+    <iframe
+            width="350"
+            height="150"
+            class="embed-responsive-item"
+            src="<%= step.medias.video.first.url %>"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
 
+  </iframe>
 <%end%>
-<%end%>
+
