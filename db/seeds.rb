@@ -78,7 +78,7 @@ p "courses Ok"
 p "start seeding the steps..."
 
 steps_array2 = []
-[[43.29204, 5.35896],[43.29343, 5.35943],[43.29611, 5.36993],[43.28557, 5.35112]].each_with_index do |coord, index|
+[[43.29611, 5.36993],[43.290976, 5.372104],[43.268881, 5.368883],[43.292066, 5.358998]].each_with_index do |coord, index|
   step = Step.create!(
 
   step_num: index + 1,
@@ -224,7 +224,7 @@ p "courses Ok"
 p "start seeding the steps..."
 
 steps_array6 = []
-[[43.29204, 5.35896],[43.29343, 5.35943],[43.29611, 5.36993],[43.28557, 5.35112]].each_with_index do |coord, index|
+[[43.29204, 5.35896],[43.28557, 5.35112],[43.29611, 5.36993],[43.29343, 5.35943]].each_with_index do |coord, index|
   step = Step.create!(
 
   step_num: index + 1,
