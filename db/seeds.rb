@@ -23,13 +23,18 @@ p "the computer is seeding"
 p "start seeding the first Courses"
 
 course1 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "Running dans les calanques",
+description: "Découvrirez les magnifiques calanques à Marseille. Lors de votre running vous verrez le bleu turquoise de la mer et les différents lieux de baignade paradisiaques. Parcours adapté pour les runneurs confirmés",
 city: "Marseille",
 photo_url: "calanquesok2",
-distance: Faker::Number.between(3, 15),
+distance: "15",
+calories: "630",
 category: "Les Calanques",
+difficulty: "difficile",
+time: "plus d'une heure",
 )
+
+
 
 p "courses Ok"
 p "start seeding the steps..."
@@ -56,14 +61,15 @@ p "-----------------------------------"
 p "start seeding the second Courses"
 
 course2 = Course.create!(
-title: "Centre-ville n°1" ,
-description: "Inauguré en 2013 à l’occasion de l’événement Marseille Capitale
- européenne de la culture 2013, ce musée imaginé par Rudy Ricciotti est la nouvelle attraction culturelle incontournable de la ville. Et pour cause, il offre une vue exceptionnelle sur Marseille et les îles du Frioul et
- des expositions très intéressantes sur l’histoire de toutes les rives de la Méditerranée.",
+title: "Du Centre jusqu'aux Terrases du Port" ,
+description: "A partir du Vieux Port , découvrez le quartier du Panier, le fort Saint Jean, le Mucem ...jusqu'à la découverte des Terrasses du port. Parcours assez court et facile.",
 city: "Marseille",
 photo_url: "centre1",
-distance: Faker::Number.between(3, 15),
+distance: "3",
+calories: "150",
 category: "Centre-ville",
+difficulty: "moyen",
+time: "entre 30 min et 1 h",
 )
 
 
@@ -94,13 +100,19 @@ p "Second courses seeded ! Let's start with the third one"
 p "Start seeding the third Courses"
 
 course3 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "Running dans la nature",
+description: "Quartier populaire à l’âme forte, venez visiter l'Estaque en running.Au départ de la jetée du port, empruntez le chemin des peintres et laissez-vous conquérir vers la nature",
 city: "Marseille",
-photo_url: "estaque1",
-distance: Faker::Number.between(3, 15),
+photo_url: "estaque4",
+distance: "10",
+calories: "330",
 category: "L'Estaque",
+difficulty: "moyen",
+time: "plus d'une heure",
 )
+
+
+
 
 p "courses Ok"
 p "start sssssseeding the steps..."
@@ -128,12 +140,15 @@ p "-------------------------------------"
 p "start seeding the Last Courses"
 
 course4 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "Course à pied au Vieux Port",
+description: "Au coeur de Marseille, de Pharo jusqu’à la Cathédrale La Major, vous longerez le port et vous passerez à côté de l’Eglise des Augustins et la Marie. Le parcours est assez facile et adapté pour tout type de runneurs.",
 city: "Marseille",
 photo_url: "vieuxport4",
-distance: Faker::Number.between(3, 15),
-category: "Le vieux port"
+distance: "5",
+calories: "280",
+category: "Le vieux port",
+difficulty: "facile",
+time: "moins de 30 min",
 )
 
 
@@ -154,13 +169,18 @@ media8 = Media.create!(category_of_media: "video", url: "https://www.youtube.com
 end
 
 course5 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "Marche à pied dans les calanques",
+description: "Entre Marseille et Cassis, vous découvrirez les magnifiques calanques. Parcourez les sentiers pour voir le bleu turquoise de la mer et les différents lieux de baignade paradisiaques. Ce parcours est facile et adapté pour une marche à pied.",
 city: "Marseille",
 photo_url: "calanques4",
-distance: Faker::Number.between(3, 15),
+distance: "16",
+calories: "450",
 category: "Les Calanques",
+difficulty: "facile",
+time: "plus d'une heure",
 )
+
+
 
 p "courses Ok"
 p "start seeding the steps..."
@@ -187,12 +207,15 @@ p "-----------------------------------"
 p "start seeding the second Courses"
 
 course6 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "Du Centre aux Terrases du Port",
+description: "A partir du Vieux Port , découvrez le quartier du Panier, le fort Saint Jean, le Mucem ...jusqu'à la découverte des Terrasses du port. Parcours assez court et facile.",
 city: "Marseille",
 photo_url: "centre3",
-distance: Faker::Number.between(3, 15),
+distance: "3",
+calories: "150",
 category: "Centre-ville",
+difficulty: "facile",
+time: "moins de 30 min",
 )
 
 
@@ -223,13 +246,17 @@ p "Second courses seeded ! Let's start with the third one"
 p "Start seeding the third Courses"
 
 course7 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "Incontournable pour tous",
+description: "Parfait pour réaliser tous types d’exercices.Venir faire du sport dans ce parc est un bon endroit donc pour se refaire une santé",
 city: "Marseille",
-photo_url: "estaque4",
-distance: Faker::Number.between(3, 15),
-category: "L'Estaque",
+photo_url: "borely.jpg",
+distance: "5",
+category: "Parc Borély",
+calories: "250",
+difficulty: "moyen",
+time: "plus d'une heure",
 )
+
 
 p "courses Ok"
 p "start sssssseeding the steps..."
@@ -257,13 +284,20 @@ p "-------------------------------------"
 p "start seeding the Last Courses"
 
 course8 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "De La Bonne Mère à la mer",
+description: "Pour voir le plus beau panorama de Marseille,de La Bonne Mère à La Corniche. Ce parcours est réservée aux coureurs aguerris. ",
 city: "Marseille",
-photo_url: "vieuxport5",
+photo_url: "corniche.jpg",
 distance: Faker::Number.between(3, 15),
-category: "Le vieux port"
+calories: "270",
+category: "Centre-ville",
+difficulty: "difficile",
+time: "entre 30 min et 1 h",
 )
+
+
+
+
 
 
 p "courses Ok"
@@ -283,12 +317,15 @@ steps_array8 = []
 end
 
 course9 = Course.create!(
-title: Faker::Address.city,
-description: Faker::VForVendetta.speech,
+title: "Marche dans les calanques",
+description: "Entre Marseille et Cassis, vous découvrirez les magnifiques calanques. Parcourez les sentiers pour voir le bleu turquoise de la mer et les différents lieux de baignade paradisiaques. Ce parcours est facile et adapté pour une marche à pied.",
 city: "Marseille",
 photo_url: "calanques3",
-distance: Faker::Number.between(3, 15),
+distance: "3",
+calories: "150",
 category: "Les Calanques",
+difficulty: "facile",
+time: "entre 30 min et 1 h",
 )
 
 p "courses Ok"
