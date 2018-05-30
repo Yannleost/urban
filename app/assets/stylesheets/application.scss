@@ -5,7 +5,7 @@
 
 // External libraries
 @import "bootstrap-sprockets";
-@import "bootstrap";
+//@import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -23,4 +23,7 @@ a.link-white {
 }
 .star-color {
   color: #FF912C;
+}
+.carousel h5 {
+  text-align: center;
 }
