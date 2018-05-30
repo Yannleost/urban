@@ -2,7 +2,7 @@
 
 meta_product_name: "Urbantraining"
 meta_title: "Urban-training - Du sport pour tout le monde , partout en exterieur"
-meta_description: "Pour tous ceux qyui veulent faire une expérience sportive
-mais aussi pour ceux qui veulent essayer quelque chose de nouveau. "
+meta_description: "Pour tous ceux qui veulent vivre une expérience sportive
+et découvrire ou redécouvrire la ville. "
 meta_image: "cover.png"                       # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
