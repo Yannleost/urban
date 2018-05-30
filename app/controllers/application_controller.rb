@@ -12,4 +12,10 @@ class ApplicationController < ActionController::Base
   def show
     render params[:page]
   end
+  def default_url_options
+  { host: ENV["HOST"] || "localhost:3000" }
+  end
+  # Make sure your production HOST variable is set with your domain name. If you deploy your code with Heroku for instance, just type in your terminal heroku config:set HOST=www.my_product.com
+
+  # You can check it's properly set with heroku config:get HOST.
 end
