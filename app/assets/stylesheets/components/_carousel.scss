@@ -1,6 +1,23 @@
-#carousel-example-generic h5 {
-text-align: center;
+#carousel-example-generic h2 {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
+#carousel-example-generic h4 {
+  text-align: center;
+  margin-bottom: 125px;
+}
+
+#carousel-example-generic {
+  height: 83vh;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 50px rgba(0,0,0,0.1);
+  background:white;
+  z-index: 2;
+  transition: all 0.2s ease-in;
+  transform: scale(1.05);
+}
 
 
