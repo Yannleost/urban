@@ -61,8 +61,8 @@ p "-----------------------------------"
 p "start seeding the second Courses"
 
 course2 = Course.create!(
-title: "Entre Vieux Port et Bonne Mère",
-description: "Parcours qui va vous faire découvrir les lieux emblématiques de Marseille.Un départ sur le Vieux Port qui ravira les amoureux de la mer et du folklore sudiste. Prenez quelques instants pour vous poser à Notre Dame de la Garde et ainsi jouir d'une vue à 360° sur Marseille",
+title: "Du Centre jusqu'aux Terrases du Port" ,
+description: "A partir du Vieux Port , découvrez le quartier du Panier, le fort Saint Jean, le Mucem ...jusqu'à la découverte des Terrasses du port. Parcours assez court et facile.",
 city: "Marseille",
 photo_url: "centre1",
 distance: "12",
@@ -246,12 +246,12 @@ p "Second courses seeded ! Let's start with the third one"
 p "Start seeding the third Courses"
 
 course7 = Course.create!(
-title: "Parc Borély pour tous",
+title: "Incontournable pour tous",
 description: "Parfait pour réaliser tous types d’exercices.Venir faire du sport dans ce parc est un bon endroit donc pour se refaire une santé",
 city: "Marseille",
 photo_url: "borely.jpg",
 distance: "5",
-category: "Centre-ville",
+category: "Parc Borély",
 calories: "250",
 difficulty: "moyen",
 time: "plus d'une heure",
