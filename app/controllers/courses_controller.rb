@@ -14,16 +14,16 @@ class CoursesController < ApplicationController
     @average_notes = all_notes.sum / all_notes.count
     all_difficulties = @reviews.pluck(:felt_difficulties)
     if all_difficulties.count != 0
-    @average_difficulties = all_difficulties.sum / all_difficulties.count
+      @average_difficulties = all_difficulties.sum / all_difficulties.count
     else
-    @average_difficulties = "Pas de note"
+      @average_difficulties = 1
     end
 
     all_times = @reviews.pluck(:time_spent)
     if all_times.count != 0
-    @average_times = all_times.sum / all_times.count
+      @average_times = all_times.sum / all_times.count
     else
-    @average_times = "Pas de time"
+      @average_times = 1
     end
 
 
@@ -37,35 +37,35 @@ class CoursesController < ApplicationController
         }
       }
     end
-     @start = @markers.slice!(0)
-     @start[:icon] = "https://cdn3.iconfinder.com/data/icons/freeapplication/png/24x24/Go.png"
-     @end = @markers.slice!((@markers.length) - 1)
-     @end[:icon] = "https://cdn0.iconfinder.com/data/icons/iconsweets2/40/finish_line.png"
-     @path = @steps.map do |step|
-       [step.latitude, step.longitude]
-     end
+    @start = @markers.slice!(0)
+    @start[:icon] = "https://cdn3.iconfinder.com/data/icons/freeapplication/png/24x24/Go.png"
+    @end = @markers.slice!((@markers.length) - 1)
+    @end[:icon] = "https://cdn0.iconfinder.com/data/icons/iconsweets2/40/finish_line.png"
+    @path = @steps.map do |step|
+     [step.latitude, step.longitude]
+   end
+ end
+
+
+
+
+ def filter
+  @course = Course.new
+end
+
+def search_course
+  sleep(3)
+  @courses = Course.all
+  @courses = @courses.where(category: params[:course][:category])
+  @courses = @courses.where(difficulty: params[:course][:difficulty])
+  @courses = @courses.where(time: params[:course][:time])
+
+
+  if @courses.count > 1
+    @course = @courses.sample
+  else
+    @course = @courses.first
   end
-
-
-
-
-  def filter
-    @course = Course.new
-  end
-
-  def search_course
-    sleep(3)
-    @courses = Course.all
-    @courses = @courses.where(category: params[:course][:category])
-    @courses = @courses.where(difficulty: params[:course][:difficulty])
-    @courses = @courses.where(time: params[:course][:time])
-
-
-    if @courses.count > 1
-      @course = @courses.sample
-    else
-      @course = @courses.first
-    end
     # category = params[:category]
     # difficulty = params[:difficulty]
     # time = params[:time]
@@ -75,10 +75,10 @@ class CoursesController < ApplicationController
       redirect_to filter_path
     end
     # @courses = Course.all
-end
+  end
     #
     #
     #
 
 
-end
+  end
