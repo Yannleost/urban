@@ -62,7 +62,7 @@ p "start seeding the second Courses"
 
 course2 = Course.create!(
 title: "Du Centre jusqu'aux Terrases du Port" ,
-description: "A partir du Vieux Port , découvrez le quartier du Panier, le fort Saint Jean, le Mucem ...jusqu'à la découverte des Terrasses du port. Parcours complexe mais très beau.",
+description: "A partir du Vieux Port, longez les quais. Montez ensuite jusqu'à la bonne-mère ou vous devrez effectuer notre premier exercice. Descendez ensuite jusqu'à la corniche ou vous effectuerez un second exercice. Enfin, remontez jusqu'au abord du vieux port et découvrez le magnifique parc du pharo",
 city: "Marseille",
 photo_url: "centre1",
 distance: "12",
