@@ -54,16 +54,55 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="block mb">
-            <h6> La moyenne de nos usagés pour ce parcours : </h6>
-            <ul>
-              <li>Note moyenne selon nos utilisateurs : <%= @average_notes %></li>
-              <li>Difficultés ressenties par nos usagés : <%= @average_difficulties %></li>
-              <li>Temps moyen mis par nos sportifs : <%= @average_times %></li>
-            </ul>
+            <div class="flexbox">
+            <div class="bloc1" class="text-center">
+              <div class="note"><p><%= @average_notes %>/5</p></div>
+              <div class="rating">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+              </div>
+
+              <div>
+                <span class="glyphicon glyphicon-user"></span> Nombre d'avis total : <%= @reviews.count %>
+              </div>
+            </div>
+
+            <div class="bloc2">
+              <h5>Difficultés ressenties par nos usagés : </h5>
+              <div class="progress">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <span>moyenne</span>
+                </div>
+              </div>
+
+              <h5>Temps moyen mis par nos sportifs :</h5>
+
+            <div class="progress progress-striped">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                <span>45 min.</span>
+              </div>
+
+            </div>
           </div>
         </div>
+        </div>
+        </div>
       </div>
-    </div>
+  </div>
+
+
+
+
+
+
+
+
+
 
     <div class="col-xs-5">
 
