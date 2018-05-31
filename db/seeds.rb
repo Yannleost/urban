@@ -62,7 +62,7 @@ p "start seeding the second Courses"
 
 course2 = Course.create!(
 title: "Du Centre jusqu'aux Terrases du Port" ,
-description: "A partir du Vieux Port , découvrez le quartier du Panier, le fort Saint Jean, le Mucem ...jusqu'à la découverte des Terrasses du port. Parcours assez court et facile.",
+description: "A partir du Vieux Port , découvrez le quartier du Panier, le fort Saint Jean, le Mucem ...jusqu'à la découverte des Terrasses du port. Parcours complexe mais très beau.",
 city: "Marseille",
 photo_url: "centre1",
 distance: "12",
@@ -83,20 +83,30 @@ steps_array2 = []
 
   step_num: index + 1,
     course: course2,
-    latitude: coord[0]
+    latitude: coord[0],
     longitude: coord[1]
    )
 
   if step.step_num == 1
-    step.medias = Media.create!(category_of_media: "photo", url: "https://cdn.radiofrance.fr/s3/cruiser-production/2016/04/f1053f5e-03c9-4d6e-90e8-8646830b4edc/870x489_vieux-port-marseille-francebleu.jpg")
+    media1000 = Media.create!(category_of_media: "photo", url: "https://cdn.radiofrance.fr/s3/cruiser-production/2016/04/f1053f5e-03c9-4d6e-90e8-8646830b4edc/870x489_vieux-port-marseille-francebleu.jpg")
+    media1004 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/I7kzr8OomoY")
+    step.medias << [media1000, media1004]
   elsif step.step_num == 2
-    step.medias = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=UHltRjNXIzk")
+    media1005 = Media.create!(category_of_media: "photo", url: "http://www.weloveprovence.fr/photos/Bouches-du-Rhone/Marseille/19717701980-La-Bonne-Mere-Marseille-p.jpg")
+     media1001 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/UHltRjNXIzk")
+    step.medias << [media1005, media1001]
   elsif step.step_num == 3
-    step.medias = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=_GZlJGERbvE&list=FLqNZkA3JBi9qt-BOIcpki1g&index=10")
+    media1006 = Media.create!(category_of_media: "photo", url: "http://www.habitermarseille.com/public/img/big/51fa501c01eeb.jpg")
+    media1002 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/_GZlJGERbvE&list=FLqNZkA3JBi9qt-BOIcpki1g&index=10")
+    step.medias << [media1006, media1002]
   else
-    step.medias = Media.create!(category_of_media: "photo", url: "https://cdn.radiofrance.fr/s3/cruiser-production/2016/04/f1053f5e-03c9-4d6e-90e8-8646830b4edc/870x489_vieux-port-marseille-francebleu.jpg")
+    media1003 = Media.create!(category_of_media: "photo", url: "http://www.tourisme-marseille.com/wp-content/uploads/2015/09/84-arcs-desordre-2013-bernar-venet-parc-du-pharo-marseille-3.jpg")
+    media1007 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/aY9jT8XzkwY")
+    step.medias << [media1003, media1007]
   end
 end
+
+
 
 p "step 2 Ok"
 p " -----------------------------------------"
@@ -258,7 +268,7 @@ description: "Parfait pour réaliser tous types d’exercices.Venir faire du spo
 city: "Marseille",
 photo_url: "borely.jpg",
 distance: "5",
-category: "Parc Borély",
+category: "Les Calanques",
 calories: "250",
 difficulty: "moyen",
 time: "plus d'une heure",
