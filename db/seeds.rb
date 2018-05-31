@@ -61,8 +61,8 @@ p "-----------------------------------"
 p "start seeding the second Courses"
 
 course2 = Course.create!(
-title: "Entre Vieux Port et Bonne Mère",
-description: "Parcours qui va vous faire découvrir les lieux emblématiques de Marseille.Un départ sur le Vieux Port qui ravira les amoureux de la mer et du folklore sudiste. Prenez quelques instants pour vous poser à Notre Dame de la Garde et ainsi jouir d'une vue à 360° sur Marseille",
+title: "Du Centre jusqu'aux Terrases du Port" ,
+description: "A partir du Vieux Port , découvrez le quartier du Panier, le fort Saint Jean, le Mucem ...jusqu'à la découverte des Terrasses du port. Parcours complexe mais très beau.",
 city: "Marseille",
 photo_url: "centre1",
 distance: "12",
@@ -86,10 +86,27 @@ steps_array2 = []
     latitude: coord[0],
     longitude: coord[1]
    )
-  media3 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
-  media4 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/C7mXGMcpA0g")
-  step.medias << [media3, media4]
+
+  if step.step_num == 1
+    media1000 = Media.create!(category_of_media: "photo", url: "https://cdn.radiofrance.fr/s3/cruiser-production/2016/04/f1053f5e-03c9-4d6e-90e8-8646830b4edc/870x489_vieux-port-marseille-francebleu.jpg")
+    media1004 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/I7kzr8OomoY")
+    step.medias << [media1000, media1004]
+  elsif step.step_num == 2
+    media1005 = Media.create!(category_of_media: "photo", url: "http://www.weloveprovence.fr/photos/Bouches-du-Rhone/Marseille/19717701980-La-Bonne-Mere-Marseille-p.jpg")
+     media1001 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/UHltRjNXIzk")
+    step.medias << [media1005, media1001]
+  elsif step.step_num == 3
+    media1006 = Media.create!(category_of_media: "photo", url: "http://www.habitermarseille.com/public/img/big/51fa501c01eeb.jpg")
+    media1002 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/_GZlJGERbvE&list=FLqNZkA3JBi9qt-BOIcpki1g&index=10")
+    step.medias << [media1006, media1002]
+  else
+    media1003 = Media.create!(category_of_media: "photo", url: "http://www.tourisme-marseille.com/wp-content/uploads/2015/09/84-arcs-desordre-2013-bernar-venet-parc-du-pharo-marseille-3.jpg")
+    media1007 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/aY9jT8XzkwY")
+    step.medias << [media1003, media1007]
+  end
 end
+
+
 
 p "step 2 Ok"
 p " -----------------------------------------"
@@ -246,12 +263,12 @@ p "Second courses seeded ! Let's start with the third one"
 p "Start seeding the third Courses"
 
 course7 = Course.create!(
-title: "Parc Borély pour tous",
+title: "Incontournable pour tous",
 description: "Parfait pour réaliser tous types d’exercices.Venir faire du sport dans ce parc est un bon endroit donc pour se refaire une santé",
 city: "Marseille",
 photo_url: "borely.jpg",
 distance: "5",
-category: "Centre-ville",
+category: "Les Calanques",
 calories: "250",
 difficulty: "moyen",
 time: "plus d'une heure",
