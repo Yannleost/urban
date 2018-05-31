@@ -98,6 +98,9 @@
     <% end  %>
   </div>
 </div>
+<div class="chicken_runner hidden">
+  <%= image_tag("giphy.gif") %>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -147,7 +150,10 @@
               step3.classList.remove("active")
               // step3.nextElementSibling.classlist.add("active")
               var form = document.getElementById("new_course");
+              var chicken = document.querySelector(".chicken_runner");
+              chicken.classList.remove("hidden");
               form.submit()
+              setTimeout = 2
               });
             });
           });
