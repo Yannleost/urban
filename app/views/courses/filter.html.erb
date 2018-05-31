@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-3">
       <div class="card" id="0" style="background-image: url('<%= image_path "calanques1.jpeg"%>');">
-      <div class="card-category">Parcours</div>
+      <div class="card-category"></div>
         <div class="card-description">
           <h2> Les calanques</h2>
               <p>superbe territoire</p>
@@ -15,7 +15,7 @@
     </div>
     <div class="col-xs-12 col-sm-3">
       <div class="card" id="1" style="background-image: url('<%= image_path "estaqueok.jpeg"%>');">
-        <div class="card-category">Parcours</div>
+        <div class="card-category"></div>
           <div class="card-description">
             <h2>L'estaque</h2>
             <p>Endroit de charme</p>
@@ -25,7 +25,7 @@
     <!-- eacht il y a des categories  on affiche une photo avec: un titre qui correspond -->
     <div class="col-xs-12 col-sm-3">
       <div class="card" id="2" style="background-image: url('<%= image_path "vieuxportok.jpeg"%>');">
-        <div class="card-category">Parcours</div>
+        <div class="card-category"></div>
           <div class="card-description">
             <h2>Le Vieux port</h2>
             <p>Le coeur de la ville</p>
@@ -35,7 +35,7 @@
     <!-- <img src="calanques.jpeg"> -->
     <div class="col-xs-12 col-sm-3">
       <div class="card" id="3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "centrevillemars2.jpeg" %> ');">
-        <div class="card-category">Parcours</div>
+        <div class="card-category"></div>
           <div class="card-description">
             <h2>Centre ville</h2>
             <p>Marseille ville du sud!</p>
@@ -56,7 +56,7 @@
     <h4 class="mt+">Combien de temps souhaitez vous courir? </h4>
 
     <%= f.input :time, collection: Course.times, require: true %>
-    <%= f.button :button, data: { disable_with: "<i class='fas fa-spinner fa-spin'></i> Envoi...".html_safe }, class: "btn btn-primary mb+ mt+ mb++" %>
+    <%= f.button :button, data: { disable_with: "<i class='fas fa-spinner fa-spin'></i> Envoi...".html_safe }, class: "btn btn-urban mb+ mt+ mb++" %>
 
   <% end %>
 </div>
