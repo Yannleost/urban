@@ -16,8 +16,8 @@
         </div>
         <%= f.input :content, :label =>"Ton commentaire*" %>
         <%= f.input :lost_calories, :label =>"Calories perdues" %>
-        <%= f.input :felt_difficulties, :label =>"Difficulté ressentie" %>
-        <%= f.input :time_spent, :label =>"Ton chrono" %>
+        <%= f.input :felt_difficulties, :label =>"Difficulté ressentie (entre 0 et 5)" %>
+        <%= f.input :time_spent, :label =>"Ton chrono (en minutes) " %>
         <%= f.input :selfie, as: :file %>
         <%= f.submit "Sauvegarder" ,class: "btn btn-urban"%>
       </div>
