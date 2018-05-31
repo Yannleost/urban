@@ -31,14 +31,14 @@
               <% array_reviews.each do |review| %>
               <ul class="list-unstyled">
                 <li><%=  review.content  %></li>
-                <p>
+
 
                   <!-- <span class="fa fa-star star-color"></span>
                   <span class="fa fa-star star-color"></span>
                   <span class="fa fa-star star-color"></span>
                   <span class="fa fa-star star-color"></span>
  -->
-                  <%=  review.note  %>/5 - <%= review.user.pseudo%></p>
+                  <p><%=  review.note  %>/5 - <%= review.user.pseudo%></p>
               </ul>
               <%end%>
 
