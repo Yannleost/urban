@@ -83,12 +83,19 @@ steps_array2 = []
 
   step_num: index + 1,
     course: course2,
-    latitude: coord[0],
+    latitude: coord[0]
     longitude: coord[1]
    )
-  media3 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
-  media4 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/C7mXGMcpA0g")
-  step.medias << [media3, media4]
+
+  if step.step_num == 1
+    step.medias = Media.create!(category_of_media: "photo", url: "https://cdn.radiofrance.fr/s3/cruiser-production/2016/04/f1053f5e-03c9-4d6e-90e8-8646830b4edc/870x489_vieux-port-marseille-francebleu.jpg")
+  elsif step.step_num == 2
+    step.medias = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=UHltRjNXIzk")
+  elsif step.step_num == 3
+    step.medias = Media.create!(category_of_media: "video", url: "https://www.youtube.com/watch?v=_GZlJGERbvE&list=FLqNZkA3JBi9qt-BOIcpki1g&index=10")
+  else
+    step.medias = Media.create!(category_of_media: "photo", url: "https://cdn.radiofrance.fr/s3/cruiser-production/2016/04/f1053f5e-03c9-4d6e-90e8-8646830b4edc/870x489_vieux-port-marseille-francebleu.jpg")
+  end
 end
 
 p "step 2 Ok"
