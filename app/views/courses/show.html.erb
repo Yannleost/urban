@@ -92,7 +92,7 @@
   <% @steps.each do |step| %>
     <div class="col-xs-12 col-sm-3 mb+">
       <div class="card" style="background-image: url('<%= step.medias.first.url %>');">
-      <p> photo step <%=  step.step_num %> </p>
+      <p> Photo de la step n°<%=  step.step_num %> </p>
       </div>
       <div class="card">
         <div class="embed-responsive embed-responsive-4by3">
@@ -126,17 +126,18 @@
       <div class="modal-body">
           <% @reviews.each do |review| %>
           <ul class="list-unstyled">
-            <li><%=  review.content  %></li>
+            <li><%=  review.content  %></li> <img src="<%= cl_image_path current_user.profile_picture%>", style="width:50px; height:50px; border-radius: 50%" %>
 
 
- <!--          <span class="fa fa-star star-color"></span>
+          <span class="fa fa-star star-color"></span>
               <span class="fa fa-star star-color"></span>
               <span class="fa fa-star star-color"></span>
-              <span class="fa fa-star star-color"></span>  -->
+              <span class="fa fa-star star-color"></span>
 
-              <%=  review.note  %>/10 - <%= review.user.pseudo%></p>
-          </ul>
+              <%= review.note %>/5 - par <b><%= review.user.pseudo%></p></b>
+
           <%end%>
+            </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
