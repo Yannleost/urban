@@ -1,21 +1,75 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4 mb+">
-      <h2>Ta review sur ton parcours</h2>
+      <h2>Commentaire</h2>
       <%= simple_form_for [@course, @review] do |f| %>
       <div class="form-inputs">
-        <%= f.input :note %> <p> Note sur 10 </p>
-        <%= f.input :content %>
-        <%= f.input :lost_calories %>
-        <%= f.input :felt_difficulties %>
-        <%= f.input :time_spent %>
+        <div class="star-rating">
+          <span class="fas fa-star " data-rating="1"></span>
+          <span class="fas fa-star" data-rating="2"></span>
+          <span class="fas fa-star" data-rating="3"></span>
+          <span class="far fa-star" data-rating="4"></span>
+          <span class="far fa-star" data-rating="5"></span>
+          <!-- <input type="hidden" name="whatever1" class="rating-value" value="2.56"> -->
+          <%= f.input :note,label: false,  input_html: { class:"rating-value hidden", value: "3"}  %> <p> Note sur 5 </p>
+        </div>
+        <%= f.input :content, :label =>"contenu" %>
+        <%= f.input :lost_calories, :label =>"calories perdues" %>
+        <%= f.input :felt_difficulties, :label =>"difficulté ressentie" %>
+        <%= f.input :time_spent, :label =>"temps" %>
         <%= f.input :selfie, as: :file %>
-        <%= f.submit "sauvegarde ta review" ,class: "btn btn-success"%>
+        <%= f.submit "Sauvegarder" ,class: "btn btn-success"%>
       </div>
       <% end %>
     </div>
   </div>
 </div>
+
+<script>
+
+var colors = function(clickedstar){
+  star_rating.forEach(function(starcol){
+    console.log(clickedstar);
+    if (starcol.dataset.rating <= clickedstar.dataset.rating) {
+      starcol.classList.add("fas");
+      starcol.classList.remove("far");
+    } else {
+      starcol.classList.add("far");
+      starcol.classList.remove("fas");
+    };
+  });
+}
+
+var star_rating = document.querySelectorAll('.fa-star');
+star_rating.forEach(function(star){
+  star.addEventListener("click", function(){
+    document.querySelector('.rating-value').value =  this.dataset.rating;
+    colors(this);
+  });
+});
+
+// var SetRatingStar = function() {
+//   return $star_rating.forEach(function() {
+//     if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+//       return $(this).removeClass('fa-star-o').addClass('fa-star');
+//     } else {
+//       return $(this).removeClass('fa-star').addClass('fa-star-o');
+//     }
+//   });
+// };
+
+// $star_rating.on('click', function() {
+//   $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+//   return SetRatingStar();
+// });
+
+// SetRatingStar();
+// $(document).ready(function() {
+
+// });
+</script>
+
+
 
 
 
