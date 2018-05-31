@@ -1,71 +1,107 @@
-<div class="container">
 
-
-  <h3 class= "mt+">Répondez aux questions et nous vous proposerons un choix de destination</h3>
-  <h4 class= "mt+">Que voulez-vous découvrir ?</h4>
-  <div class="row">
-    <div class="col-xs-12 col-sm-3">
-      <div class="card" id="0" style="background-image: url('<%= image_path "calanques1.jpeg"%>');">
-      <div class="card-category">Parcours</div>
-        <div class="card-description">
-          <h2> Les calanques</h2>
-              <p>superbe territoire</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card" id="1" style="background-image: url('<%= image_path "estaqueok.jpeg"%>');">
-        <div class="card-category">Parcours</div>
-          <div class="card-description">
-            <h2>L'estaque</h2>
-            <p>Endroit de charme</p>
-          </div>
-      </div>
-    </div>
-    <!-- eacht il y a des categories  on affiche une photo avec: un titre qui correspond -->
-    <div class="col-xs-12 col-sm-3">
-      <div class="card" id="2" style="background-image: url('<%= image_path "vieuxportok.jpeg"%>');">
-        <div class="card-category">Parcours</div>
-          <div class="card-description">
-            <h2>Le Vieux port</h2>
-            <p>Le coeur de la ville</p>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <h2>Répondez aux questions et nous vous proposerons un choix de destination</h2>
+      <h4>Que voulez-vous découvrir ?</h4>
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <div class="card" id="0" style="background-image: url('<%= image_path "calanques1.jpeg"%>');">
+          <div class="card-category">Parcours</div>
+            <div class="card-description">
+              <h2> Les calanques</h2>
+                  <p>superbe territoire</p>
+            </div>
           </div>
         </div>
-      </div>
-    <!-- <img src="calanques.jpeg"> -->
-    <div class="col-xs-12 col-sm-3">
-      <div class="card" id="3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "centrevillemars2.jpeg" %> ');">
-        <div class="card-category">Parcours</div>
-          <div class="card-description">
-            <h2>Centre ville</h2>
-            <p>Marseille ville du sud!</p>
+        <div class="col-xs-12 col-sm-3">
+          <div class="card" id="1" style="background-image: url('<%= image_path "estaqueok.jpeg"%>');">
+            <div class="card-category">Parcours</div>
+              <div class="card-description">
+                <h2>L'estaque</h2>
+                <p>Endroit de charme</p>
+              </div>
           </div>
+        </div>
+        <!-- eacht il y a des categories  on affiche une photo avec: un titre qui correspond -->
+        <div class="col-xs-12 col-sm-3">
+          <div class="card" id="2" style="background-image: url('<%= image_path "vieuxportok.jpeg"%>');">
+            <div class="card-category">Parcours</div>
+              <div class="card-description">
+                <h2>Le Vieux port</h2>
+                <p>Le coeur de la ville</p>
+              </div>
+            </div>
+          </div>
+        <!-- <img src="calanques.jpeg"> -->
+        <div class="col-xs-12 col-sm-3">
+          <div class="card" id="3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "centrevillemars2.jpeg" %> ');">
+            <div class="card-category">Parcours</div>
+              <div class="card-description">
+                <h2>Centre ville</h2>
+                <p>Marseille ville du sud!</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <%= simple_form_for(@course, url: searchcourse_path, method: :get) do |f| %>
+      <div class="hidden">
+        <%= f.input :category, as: :radio_buttons, collection: Course.categories %>
+      </div>
+
+    </div>
+    <div class="item">
+
+      <h4>Choisissez votre difficulté</h4>
+      <div class="col-xs-12 col-sm-3">
+        <div class="card_diff" id="0" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "card-green.png" %> ');">
+          <div class="card-category">Facile</div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="card_diff" id="1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "card-orange.jpg" %> ');">
+          <div class="card-category">Moyen</div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="card_diff" id="2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "card-red.jpg" %> ');">
+          <div class="card-category">Difficile</div>
+        </div>
+      </div>
+
+      <div class="hidden">
+        <%= f.input :difficulty, as: :radio_buttons, collection: Course.difficulties %>
       </div>
     </div>
-
-
+    <div class="item">
+      <h4>Combien de temps souhaitez vous courir? </h4>
+      <div class="col-xs-12 col-sm-3">
+        <div class="card_time" id="0" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "easyrun.jpg" %> ');">
+          <div class="card-category">Inférieur à 30mn</div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="card_time" id="1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "mediumrun.jpg" %> ');">
+          <div class="card-category">Entre 30mn et 1h</div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="card_time" id="2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "hardrun.jpg" %> ');">
+          <div class="card-category">Plus d'une heure</div>
+        </div>
+      </div>
+      <div class="hidden">
+      <%= f.input :time, as: :radio_buttons, collection: Course.times %>
+      </div>
+    </div>
+    <% end  %>
   </div>
-  <%= simple_form_for(@course, url: searchcourse_path, method: :get) do |f| %>
-
-   <div class="hidden">
-    <%= f.input :category, as: :radio_buttons,
-          collection: Course.categories %>
-   </div>
-    <h4 class= "mt+">Quel niveau de difficulté souhaitez vous pour la course?</h4>
-    <%= f.input :difficulty, collection: Course.difficulties, required: true  %>
-    <h4 class="mt+">Combien de temps souhaitez vous courir? </h4>
-
-    <%= f.input :time, collection: Course.times, require: true %>
-    <%= f.button :button, data: { disable_with: "<i class='fas fa-spinner fa-spin'></i> Envoi...".html_safe }, class: "btn btn-primary mb+ mt+ mb++" %>
-
-  <% end %>
 </div>
-
-
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+
     var cards = document.querySelectorAll(".card");
 
     cards.forEach(function(card) {
@@ -82,10 +118,45 @@
           }
         });
         this.classList.add("selected");
+        var step1 = document.querySelector("div > .active");
+        step1.classList.remove("active");
+        step1.nextElementSibling.classList.add("active");
+
+
+        var harder = document.querySelectorAll(".card_diff");
+        harder.forEach(function(card_diff){
+          card_diff.addEventListener("click", function () {
+          var id2 = this.id;
+          var radioId2 = `course_difficulty_${id2}`
+          var radio2 = document.getElementById(radioId2)
+          radio2.checked = true;
+          this.classList.add("selected")
+            var step2 = document.querySelector("div > .active");
+            step2.classList.remove("active");
+            step2.nextElementSibling.classList.add("active");
+
+            var times = document.querySelectorAll(".card_time");
+            times.forEach(function(time){
+              time.addEventListener("click", function () {
+              var id3 = this.id;
+              var radioId3 = `course_time_${id3}`
+              var radio3 = document.getElementById(radioId3)
+              radio3.checked = true
+              this.classList.add("selected")
+              var step3 = document.querySelector("div > .active")
+              step3.classList.remove("active")
+              // step3.nextElementSibling.classlist.add("active")
+              var form = document.getElementById("new_course");
+              form.submit()
+              });
+            });
+          });
+        });
       });
     });
+
+
   });
 
 </script>
-
 

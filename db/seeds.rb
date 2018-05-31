@@ -62,10 +62,10 @@ p "start seeding the second Courses"
 
 course2 = Course.create!(
 title: "Du Centre jusqu'aux Terrases du Port" ,
-description: "A partir du Vieux Port , découvrez le quartier du Panier, le fort Saint Jean, le Mucem ...jusqu'à la découverte des Terrasses du port. Parcours assez court et facile.",
+description: "A partir du Vieux Port, longez les quais. Montez ensuite jusqu'à la bonne-mère ou vous devrez effectuer notre premier exercice. Descendez ensuite jusqu'à la corniche ou vous effectuerez un second exercice. Enfin, remontez jusqu'au abord du vieux port et découvrez le magnifique parc du pharo",
 city: "Marseille",
 photo_url: "centre1",
-distance: "3",
+distance: "12",
 calories: "150",
 category: "Centre-ville",
 difficulty: "moyen",
@@ -78,7 +78,7 @@ p "courses Ok"
 p "start seeding the steps..."
 
 steps_array2 = []
-[[43.29204, 5.35896],[43.29343, 5.35943],[43.29611, 5.36993],[43.28557, 5.35112]].each_with_index do |coord, index|
+[[43.29611, 5.36993],[43.290976, 5.372104],[43.268881, 5.368883],[43.292066, 5.358998]].each_with_index do |coord, index|
   step = Step.create!(
 
   step_num: index + 1,
@@ -86,10 +86,27 @@ steps_array2 = []
     latitude: coord[0],
     longitude: coord[1]
    )
-  media3 = Media.create!(category_of_media: "photo", url: "https://picsum.photos/200/300/?random")
-  media4 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/C7mXGMcpA0g")
-  step.medias << [media3, media4]
+
+  if step.step_num == 1
+    media1000 = Media.create!(category_of_media: "photo", url: "https://cdn.radiofrance.fr/s3/cruiser-production/2016/04/f1053f5e-03c9-4d6e-90e8-8646830b4edc/870x489_vieux-port-marseille-francebleu.jpg")
+    media1004 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/I7kzr8OomoY")
+    step.medias << [media1000, media1004]
+  elsif step.step_num == 2
+    media1005 = Media.create!(category_of_media: "photo", url: "http://www.weloveprovence.fr/photos/Bouches-du-Rhone/Marseille/19717701980-La-Bonne-Mere-Marseille-p.jpg")
+    media1001 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/9lK3cJyUeP8")
+    step.medias << [media1005, media1001]
+  elsif step.step_num == 3
+    media1006 = Media.create!(category_of_media: "photo", url: "http://www.habitermarseille.com/public/img/big/51fa501c01eeb.jpg")
+    media1002 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/1HfJTExoYHs")
+    step.medias << [media1006, media1002]
+  else
+    media1003 = Media.create!(category_of_media: "photo", url: "http://www.tourisme-marseille.com/wp-content/uploads/2015/09/84-arcs-desordre-2013-bernar-venet-parc-du-pharo-marseille-3.jpg")
+    media1007 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/aY9jT8XzkwY")
+    step.medias << [media1003, media1007]
+  end
 end
+
+
 
 p "step 2 Ok"
 p " -----------------------------------------"
@@ -224,7 +241,7 @@ p "courses Ok"
 p "start seeding the steps..."
 
 steps_array6 = []
-[[43.29204, 5.35896],[43.29343, 5.35943],[43.29611, 5.36993],[43.28557, 5.35112]].each_with_index do |coord, index|
+[[43.29204, 5.35896],[43.28557, 5.35112],[43.29611, 5.36993],[43.29343, 5.35943]].each_with_index do |coord, index|
   step = Step.create!(
 
   step_num: index + 1,
@@ -251,7 +268,7 @@ description: "Parfait pour réaliser tous types d’exercices.Venir faire du spo
 city: "Marseille",
 photo_url: "borely.jpg",
 distance: "5",
-category: "Parc Borély",
+category: "Les Calanques",
 calories: "250",
 difficulty: "moyen",
 time: "plus d'une heure",

@@ -4,14 +4,14 @@
 
 <% if step.step_num == 1 %>
   <p> Une photo du lieu de votre départ... <p>
-  <img src="<%= step.medias.photo.last.url%>" width="375 ", height="150">
+  <img src="<%= step.medias.photo.last.url%>" width="325 ", height="150">
 <%elsif step.step_num == 4 %>
 <p> Une photo du lieu de votre arrivée... <p>
-  <img src="<%= step.medias.photo.last.url%>" width="375", height="150">
+  <img src="<%= step.medias.photo.last.url%>" width="325", height="150">
 <%elsif step.step_num == 2 %>
 <p> Voici l'exercice à faire à ce point ! </p>
   <iframe
-            width="375"
+            width="325"
             height="150"
             class="embed-responsive-item"
             src="<%= step.medias.video.first.url %>"
@@ -23,7 +23,7 @@
   <% else step.step_num == 3 %>
   <p> Voici l'exercice à faire à ce point ! </p>
     <iframe
-            width="350"
+            width="325"
             height="150"
             class="embed-responsive-item"
             src="<%= step.medias.video.first.url %>"
