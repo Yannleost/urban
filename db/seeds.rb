@@ -93,11 +93,11 @@ steps_array2 = []
     step.medias << [media1000, media1004]
   elsif step.step_num == 2
     media1005 = Media.create!(category_of_media: "photo", url: "http://www.weloveprovence.fr/photos/Bouches-du-Rhone/Marseille/19717701980-La-Bonne-Mere-Marseille-p.jpg")
-     media1001 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/UHltRjNXIzk")
+    media1001 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/9lK3cJyUeP8")
     step.medias << [media1005, media1001]
   elsif step.step_num == 3
     media1006 = Media.create!(category_of_media: "photo", url: "http://www.habitermarseille.com/public/img/big/51fa501c01eeb.jpg")
-    media1002 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/_GZlJGERbvE&list=FLqNZkA3JBi9qt-BOIcpki1g&index=10")
+    media1002 = Media.create!(category_of_media: "video", url: "https://www.youtube.com/embed/1HfJTExoYHs")
     step.medias << [media1006, media1002]
   else
     media1003 = Media.create!(category_of_media: "photo", url: "http://www.tourisme-marseille.com/wp-content/uploads/2015/09/84-arcs-desordre-2013-bernar-venet-parc-du-pharo-marseille-3.jpg")
