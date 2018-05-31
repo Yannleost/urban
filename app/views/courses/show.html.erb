@@ -22,7 +22,7 @@
       <div class ="row">
         <div class="col-xs-12">
           <div class="block mb">
-            <h4> Avis des deux derniers runners : </h4>
+            <h4> Avis des deux derniers utilisateurs : </h4>
 
               <% two_reviews = @reviews.last(2) %>
               <% array_reviews = [] %>
@@ -36,9 +36,9 @@
               </ul>
               <%end%>
 
-              <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Tous les avis</a>
+              <a class="btn btn-urban" data-toggle="modal" href='#modal-id'>Tous les avis</a>
 
-              <%= link_to "Donne ton avis", new_course_review_path(@course) %>
+              <%= link_to "Donne ton avis", new_course_review_path(@course), class: "reviewperso" %>
 
              </div>
         </div>
