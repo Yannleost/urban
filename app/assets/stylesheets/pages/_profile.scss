@@ -1,0 +1,35 @@
+.profile-pic {
+text-align: center;
+}
+
+.img-profile {
+border-radius: 50%;
+height: 150px;
+width: 150px;
+}
+.smaller-image {
+border-radius: 50%;
+height: 80px;
+width: 80px;
+}
+.reviews {
+
+  padding: 10px;
+  // display: flex;
+  // align-items: center;
+}
+
+.reviews-image {
+height: 130px;
+width: 250px;
+border-radius: 0%;
+}
+.review {
+border: 1px solid black;
+text-align: center;
+background: #fff;
+width:100%;
+margin: 10px
+
+}
+

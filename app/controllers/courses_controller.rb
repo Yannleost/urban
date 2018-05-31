@@ -1,5 +1,7 @@
+
+
 class CoursesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :filter, :search_cours]
+  skip_before_action :authenticate_user!, only: [:index, :show, :filter, :search_course]
 
   def index
     @courses = Course.all
@@ -33,13 +35,15 @@ class CoursesController < ApplicationController
         infoWindow: {
           content: render_to_string(partial: "/steps/map_box", locals: { step: step })
         }
-
       }
     end
-
-    @path = @steps.map do |step|
-      [step.latitude, step.longitude]
-    end
+     @start = @markers.slice!(0)
+     @start[:icon] = "https://cdn3.iconfinder.com/data/icons/freeapplication/png/24x24/Go.png"
+     @end = @markers.slice!((@markers.length) - 1)
+     @end[:icon] = "https://cdn0.iconfinder.com/data/icons/iconsweets2/40/finish_line.png"
+     @path = @steps.map do |step|
+       [step.latitude, step.longitude]
+     end
   end
 
 
@@ -50,6 +54,7 @@ class CoursesController < ApplicationController
   end
 
   def search_course
+    sleep(3)
     @courses = Course.all
     @courses = @courses.where(category: params[:course][:category])
     @courses = @courses.where(difficulty: params[:course][:difficulty])

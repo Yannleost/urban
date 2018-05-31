@@ -1,12 +1,14 @@
 
 <div class="container">
-  <h1><%= @course.title %>  </h1>
+  <h1 class= "white" ><%= @course.title %>  </h1>
    <div class="col-xs-12">
       <div class="row">
        <div id="map" style="width: 100%;
        height: 350px;"
        data-markers="<%= @markers.to_json %>"
-       data-path="<%= @path.to_json %>">
+       data-path="<%= @path.to_json %>"
+       data-start="<%= @start.to_json %>"
+       data-end="<%= @end.to_json %>">
      </div>
    </div>
   </div>
@@ -20,25 +22,31 @@
       <div class ="row">
         <div class="col-xs-12">
           <div class="block mb">
-            <h4> Voilà ce qu'en ont pensés nos runners : </h4>
-              <% @reviews.each do |review| %>
+            <h4> Avis des deux derniers runners : </h4>
+
+              <% two_reviews = @reviews.last(2) %>
+              <% array_reviews = [] %>
+              <% array_reviews << two_reviews %>
+              <% array_reviews = array_reviews.flatten %>
+              <% array_reviews.each do |review| %>
               <ul class="list-unstyled">
                 <li><%=  review.content  %></li>
                 <p>
 
+                  <!-- <span class="fa fa-star star-color"></span>
                   <span class="fa fa-star star-color"></span>
                   <span class="fa fa-star star-color"></span>
                   <span class="fa fa-star star-color"></span>
-                  <span class="fa fa-star star-color"></span>
-
-                  <%=  review.note  %>/10 - <%= review.user.email%></p>
+ -->
+                  <%=  review.note  %>/10 - <%= review.user.pseudo%></p>
               </ul>
               <%end%>
 
-<a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Note ton parcours</a>
-              <%= link_to "Note ton parcours", new_course_review_path(@course) %>
+              <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Tous les avis</a>
 
-              <%= link_to "Voir tous les parcours", new_course_review_path(@course) %></div>
+              <%= link_to "Donne ton avis", new_course_review_path(@course) %>
+
+             </div>
         </div>
 
       </div>
@@ -49,8 +57,8 @@
             <h6> La moyenne de nos usagés pour ce parcours : </h6>
             <ul>
               <li>Note moyenne selon nos utilisateurs : <%= @average_notes %></li>
-              <li>Difficultés ressentie par nos usagés : <%= @average_difficulties %></li>
-              <li>temps moyen mis par nos sportifs : <%= @average_times %></li>
+              <li>Difficultés ressenties par nos usagés : <%= @average_difficulties %></li>
+              <li>Temps moyen mis par nos sportifs : <%= @average_times %></li>
             </ul>
           </div>
         </div>
@@ -66,8 +74,8 @@
           <ul>
           <li>Difficulté : <%= @course.difficulty %> </li>
           <li>Catégorie : <%= @course.category %> </li>
-          <li>Distance : <%= @course.distance %></li>
-          <li>Calorie : <%= @course.calories %></li>
+          <li>Distance : <%= @course.distance %>km</li>
+          <li>Calories : <%= @course.calories %></li>
           </ul>
         </div>
 
@@ -82,7 +90,7 @@
 
 <div class="row">
   <% @steps.each do |step| %>
-    <div class="col-xs-12 col-sm-3">
+    <div class="col-xs-12 col-sm-3 mb+">
       <div class="card" style="background-image: url('<%= step.medias.first.url %>');">
       <p> photo step <%=  step.step_num %> </p>
       </div>
@@ -113,26 +121,25 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title">Tous les avis disponibles :</h4>
       </div>
       <div class="modal-body">
           <% @reviews.each do |review| %>
           <ul class="list-unstyled">
             <li><%=  review.content  %></li>
-            <p>
 
-              <span class="fa fa-star star-color"></span>
-              <span class="fa fa-star star-color"></span>
-              <span class="fa fa-star star-color"></span>
-              <span class="fa fa-star star-color"></span>
 
-              <%=  review.note  %>/10 - <%= review.user.email%></p>
+ <!--          <span class="fa fa-star star-color"></span>
+              <span class="fa fa-star star-color"></span>
+              <span class="fa fa-star star-color"></span>
+              <span class="fa fa-star star-color"></span>  -->
+
+              <%=  review.note  %>/10 - <%= review.user.pseudo%></p>
           </ul>
           <%end%>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

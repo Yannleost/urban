@@ -2,14 +2,14 @@
   <div class="col-xs-12 col-sm-4">
     <div class="card_index pb-">
       <%= link_to course_path(course.id) do %>
-        <div class="card_index_inner">
-          <div class="card-img-top mb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(course.photo_url)%>)"></div>
+        <div class="card_index_inner" style="width: 100%">
+          <div class="card-img-top mb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)) , url(<%= image_path(course.photo_url)%>)"></div>
           <div class="card-category" ><p><%= course.category %></p></div>
         </div>
       <%end%>
       <div class="card-body pl mb-">
         <div class="card-text" ><p><%= course.title %></p></div>
-        <div class="card-text" ><p><%= course.time %></p></div>
+        <div class="card-text" ><p>Temps: <%= course.time %></p></div>
         <div class="card-text" ><p>Difficulté: <%= course.difficulty %></p></div>
       </div>
     </div>

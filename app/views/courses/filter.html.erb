@@ -1,3 +1,4 @@
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
@@ -69,7 +70,7 @@
         </div>
       </div>
 
-      <div class="">
+      <div class="hidden">
         <%= f.input :difficulty, as: :radio_buttons, collection: Course.difficulties %>
       </div>
     </div>
@@ -90,7 +91,7 @@
           <div class="card-category">Plus d'une heure</div>
         </div>
       </div>
-      <div class="">
+      <div class="hidden">
       <%= f.input :time, as: :radio_buttons, collection: Course.times %>
       </div>
     </div>
@@ -158,3 +159,4 @@
   });
 
 </script>
+
