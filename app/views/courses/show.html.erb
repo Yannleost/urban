@@ -30,7 +30,7 @@
               <% array_reviews = array_reviews.flatten %>
               <% array_reviews.each do |review| %>
               <ul class="list-unstyled">
-                <li><p><img src="<%= cl_image_path review.user.profile_picture%>", style="width:50px; height:50px; border-radius: 50%" %><p> </p><b><%= review.user.pseudo%></b>  -  <%=  review.content  %> <br>Note: <%=  review.note  %>/5 </p>
+                <li><p><img src="<%= cl_image_path review.user.profile_picture%>", style="width:50px; height:50px; border-radius: 50%" %>   <b><%= review.user.pseudo%></b>  -  <%=  review.content  %> <br>Note: <%=  review.note  %>/5 </p>
                   </li>
 
               </ul>
