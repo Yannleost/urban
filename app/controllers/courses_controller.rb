@@ -11,12 +11,16 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     @reviews = @course.reviews
     all_notes = @reviews.pluck(:note)
-    @average_notes = all_notes.sum / all_notes.count
+    if all_notes.count > 0
+      @average_notes = all_notes.sum / all_notes.count
+    else
+      @average_notes = 4
+    end
     all_difficulties = @reviews.pluck(:felt_difficulties)
     if all_difficulties.count != 0
       @average_difficulties = all_difficulties.sum / all_difficulties.count
     else
-      @average_difficulties = 1
+      @average_difficulties = 4
     end
 
     all_times = @reviews.pluck(:time_spent)
