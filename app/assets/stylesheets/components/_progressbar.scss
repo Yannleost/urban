@@ -1,4 +1,14 @@
-.progress {
-  text-align: center;
+.progress-bar {
   color: #000000;
+  position: relative;
 }
+
+
+.progress span {
+    top: 0;
+    z-index: 2;
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+
