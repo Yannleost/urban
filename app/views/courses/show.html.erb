@@ -69,18 +69,18 @@
               <h5>Difficultés ressenties par nos usagés : </h5>
               <div class="progress">
                 <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                    <span>moyenne</span>
+                  aria-valuemin="0" aria-valuemax="100" style="width: <%= @average_difficulties * 10 %>%;">
                 </div>
+                    <span><%= @average_difficulties%>/10</span>
               </div>
 
               <h5>Temps moyen mis par nos utilisateurs :</h5>
 
             <div class="progress progress-striped">
               <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                <span>50 min.</span>
+                aria-valuemin="0" aria-valuemax="100" style="width: <%= @average_times * 1.2 %>%;">
               </div>
+                <span><%= @average_times %> minutes</span>
 
             </div>
           </div>
