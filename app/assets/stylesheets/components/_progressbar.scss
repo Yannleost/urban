@@ -1,14 +1,19 @@
-.progress-bar {
-  color: #000000;
+.progress {
   position: relative;
 }
-
+.progress-bar {
+    z-index: 1;
+    position: absolute;
+}
 
 .progress span {
+    position: absolute;
     top: 0;
     z-index: 2;
-    color: black;
+    color: black; /* Change according to needs */
     text-align: center;
     width: 100%;
 }
+
+
 
