@@ -2,46 +2,36 @@
 <div class= "container"">
   <div class= "row" >
     <div class="col-xs-12">
-        <div class="block mb">
-
-      <div class= "profile-pic mt">
-
-      <% if @current_user.profile_picture.present? %>
-
-        <img src="<%= cl_image_path current_user.profile_picture, height: 200, width: 300, crop: :fill %>" class="img-profile">
-
-      <% else %>
-
-        <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198" class="img-profile", style="width:300; height:">
-        <%end%>
-        <h2> <%= current_user.pseudo %></h2>
-        <p><%= current_user.email %></p>
+      <div class="block mb">
+        <div class= "profile-pic mt">
+          <% if @current_user.profile_picture.present? %>
+            <img src="<%= cl_image_path current_user.profile_picture, height: 200, width: 300, crop: :fill %>" class="img-profile">
+          <% else %>
+            <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198" class="img-profile", style="width:300; height:">
+          <%end%>
+          <h2> <%= current_user.pseudo %></h2>
+          <p><%= current_user.email %></p>
         </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<div class= "row" >
-<div class="col-xs-12">
-        <div class="block ">
-    <h3> Voici tous vos commentaires : </h3>
-
-
+  <div class= "row" >
+    <div class="col-xs-12">
+      <div class="block ">
+        <h3> Voici tous vos commentaires : </h3>
         <% @reviews.each do |review| %>
-            <div class="row">
+          <div class="row">
             <div class="review">
-
               <div class = "reviews-title"> <b>Nom de la course </b>: <%= review.course.title %>
               </div>
-             <div class = "reviews-body"><b>Ton com's :</b><%= review.content %></div>
+              <div class = "reviews-body"><b>Ton com's :</b><%= review.content %></div>
               <img class ="reviews-image" src="<%= review.selfie%>" style="text-align:center">
-
-         </div>
-         </div>
-            <%end%>
-
-
+              <%= button_to "delete", course_review_path(review.course, review), :method => :delete, data: {confirm: "êtes vous sûr de vouloir supprimer votre commentaire?"} %>
+            </div>
+          </div>
+        <%end%>
+      </div>
     </div>
-<div></div>
   </div>
 </div>
 

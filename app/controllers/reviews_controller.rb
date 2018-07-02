@@ -20,7 +20,8 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to course_reviews_path
+    flash[:notice] = "commentaire supprimé"
+    redirect_to profiles_path
   end
 
 
