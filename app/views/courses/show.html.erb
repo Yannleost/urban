@@ -23,18 +23,19 @@
         <div class="col-xs-12">
           <div class="block mb">
             <h4> Avis des deux derniers utilisateurs : </h4>
-
+            <% if @reviews != [] %>
               <% two_reviews = @reviews.last(2) %>
               <% array_reviews = [] %>
               <% array_reviews << two_reviews %>
               <% array_reviews = array_reviews.flatten %>
+            <% end %>
               <% array_reviews.each do |review| %>
-              <ul class="list-unstyled">
+                <ul class="list-unstyled">
 
-                <li><p><img src="<%= cl_image_path review.user.profile_picture%>", style="width:50px; height:50px; border-radius: 50%" %>  <b><%= review.user.pseudo%></b>  -  <%=  review.content  %> <br>Note: <%=  review.note  %>/5 </p>
-                  </li>
+                  <li><p><img src="<%= cl_image_path review.user.profile_picture%>", style="width:50px; height:50px; border-radius: 50%" %>  <b><%= review.user.pseudo%></b>  -  <%=  review.content  %> <br>Note: <%=  review.note  %>/5 </p>
+                    </li>
 
-              </ul>
+                </ul>
               <%end%>
 
               <a class="btn btn-urban" data-toggle="modal" href='#modal-id'>Tous les avis</a>
@@ -53,7 +54,7 @@
             <div class="bloc1" class="text-center">
               <div class="note"><p><%= @average_notes %>/5</p></div>
               <div class="rating">
-                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>

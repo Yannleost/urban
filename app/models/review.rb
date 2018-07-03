@@ -19,5 +19,6 @@ class Review < ApplicationRecord
   belongs_to :course
   belongs_to :user
   mount_uploader :selfie, PhotoUploader
-
-end
+  validates :content, presence: true
+  validates :felt_difficulties, presence: true, numericality: { only_integer: true, :less_than_or_equal_to => 5, :greater_than_or_equal_to => 0, message: "doit être compris entre 0 et 5" }
+ end

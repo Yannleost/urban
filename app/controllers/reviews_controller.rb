@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to course_path(@course)
     else
-      render "courses/show"
+      render :new
     end
   end
 
