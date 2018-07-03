@@ -56,11 +56,12 @@
             <div class="bloc1" class="text-center">
               <div class="note"><p><%= @average_notes %>/5</p></div>
               <div class="rating">
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
+                <% @average_notes.times do %>
+                  <span class="glyphicon glyphicon-star"></span>
+                <% end %>
+                <% (5 - @average_notes).times do %>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+                <% end %>
               </div>
 
               <div>
