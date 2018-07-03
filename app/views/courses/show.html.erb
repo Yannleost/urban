@@ -28,6 +28,8 @@
               <% array_reviews = [] %>
               <% array_reviews << two_reviews %>
               <% array_reviews = array_reviews.flatten %>
+            <% else @reviews = [] %>
+              <% array_reviews = [] %>
             <% end %>
               <% array_reviews.each do |review| %>
                 <ul class="list-unstyled">
