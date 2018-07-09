@@ -1,13 +1,11 @@
 
 <div class="container">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
-  <!-- Wrapper for slides -->
     <div class="carousel-inner"  role="listbox">
       <div class="item active flexbox">
         <div style="text-align: center"><h2>Répondez aux questions et nous vous proposerons un choix de destination</h2>
         <h3>Que voulez-vous découvrir ?</h3>
         </div>
-
         <div class="row">
           <div class=" col-sm-offset-2 col-sm-4">
             <div class="card" id="0" style="background-image: url('<%= image_path "calanques1.jpeg"%>');">
@@ -31,42 +29,38 @@
         </div>
         <!-- eacht il y a des categories  on affiche une photo avec: un titre qui correspond -->
         <div class="row" style="margin-bottom: 50px">
-           <div class="col-sm-offset-2 col-sm-4">
-             <div class="card" id="2" style="background-image: url('<%= image_path "vieuxportok.jpeg"%>');">
-               <div class="card-category">Parcours</div>
-                  <div class="card-description">
-                     <h2>Le Vieux port</h2>
-                     <p>Le coeur de la ville</p>
-                  </div>
+          <div class="col-sm-offset-2 col-sm-4">
+            <div class="card" id="2" style="background-image: url('<%= image_path "vieuxportok.jpeg"%>');">
+              <div class="card-category">Parcours</div>
+                <div class="card-description">
+                  <h2>Le Vieux port</h2>
+                  <p>Le coeur de la ville</p>
                 </div>
-              </div>
-        <!-- <img src="calanques.jpeg"> -->
-        <div class="col-sm-4">
-          <div class="card" id="3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "centrevillemars2.jpeg" %> ');">
-            <div class="card-category">Parcours</div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card" id="3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "centrevillemars2.jpeg" %> ');">
+              <div class="card-category">Parcours</div>
               <div class="card-description">
                 <h2>Centre ville</h2>
                 <p>Marseille ville du sud!</p>
               </div>
-
-           </div>
-         </div>
+            </div>
+          </div>
         </div>
-
-      <%= simple_form_for(@course, url: searchcourse_path, method: :get) do |f| %>
+        <%= simple_form_for(@course, url: searchcourse_path, method: :get) do |f| %>
         <div class="hidden">
-        <%= f.input :category, as: :radio_buttons, collection: Course.categories %>
+          <%= f.input :category, as: :radio_buttons, collection: Course.categories %>
         </div>
       </div>
-
     <div class="item" >
       <div style="text-align: center"><h2>Quel niveau de difficulté souhaitez-vous choisir ? </h2>
       </div>
       <div class="col-sm-offset-4 col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="card_diff" id="0" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "card-green.png" %> ');">
-            <div class="card-category">Facile
-            </div>
-         </div>
+          <div class="card-category">Facile
+          </div>
+        </div>
       </div>
       <div class="col-sm-offset-4 col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="card_diff" id="1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "card-orange.jpg" %> ');">
@@ -101,19 +95,15 @@
       </div>
       <div class="col-sm-offset-4 col-xs-12 col-sm-4 col-sm-offset-4" style="margin-bottom: 50px">
         <div class="card_time" id="2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "hardrun.jpg" %> ');">
-          <div class="card-category">Plus d'une heure
-          </div>
+        <div class="card-category">Plus d'une heure</div>
         </div>
       </div>
-
       <div class="hidden">
       <%= f.input :time, as: :radio_buttons, collection: Course.times %>
       </div>
     </div>
     <% end  %>
-
     </div>
-
   </div>
 </div>
 
